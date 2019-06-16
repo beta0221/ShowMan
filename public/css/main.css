@@ -1,0 +1,87 @@
+*{
+    position: relative;
+    box-sizing: border-box;
+}
+/* background */
+div.background{
+  position:fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  z-index: -1;
+}
+div.background img{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  z-index: -1;
+  opacity: 1;
+}
+
+/* navbar */
+.navbar-top{
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.7) 100%);
+}
+.navbar{
+  background: linear-gradient(160deg, rgba(3,110,184,0.9) 0%, rgba(23,42,136,0.9) 100%);
+}
+.navbar ul{
+    width:100%;
+    justify-content: center;
+}
+.navbar ul li{
+    margin:0 40px;
+    transition: all 0.1s ease-in-out;
+}
+.navbar ul li a {
+  color: #fff!important;
+}
+.navbar ul li:hover{
+  transform: scale(1.5);
+}
+.nav-now{
+  background-color: rgba(0,0,0,0.3);
+  border-radius: .3rem;
+}
+/* float btn */
+.cs-btn{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgba(3,110,184,0.9);
+  cursor: pointer;
+  z-index: 5;
+}
+.top-btn{
+  position: fixed;
+  right: 20px;
+  bottom: 78px;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.6);
+  cursor: pointer;
+  z-index: 5;
+}
+.cs-btn img,.top-btn img{
+  width: 100%;
+  transform: scale(0.6);
+  cursor: pointer;
+}
+
+.outter{
+  margin: 56px 0;
+}
+
+
+.footer{
+    height: 200px;
+    background: linear-gradient(160deg, rgba(31, 45, 116, 0.9) 0%, rgba(5, 13, 53, 0.9) 100%);
+    color: #fff;
+  }

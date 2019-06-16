@@ -1,0 +1,17 @@
+body{
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+}
+hr{
+  border-color: #fff;
+}
+.banner img{
+    width: 100%;
+}
+.banner h1{
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    color: 000;
+    font-size: 56px;
+}
