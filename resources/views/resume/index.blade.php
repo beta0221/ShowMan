@@ -14,6 +14,7 @@
                 <th>姓名</th>
                 <th>性別</th>
                 <th>生日</th>
+                
                 {{-- <th>聯絡電話</th>
                 <th>手機</th>
                 <th>Email</th> --}}
