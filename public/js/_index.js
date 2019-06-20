@@ -28,13 +28,13 @@ $(document).ready(function(){
     $(this).addClass('show');
     switch($(this).attr('service')) {
       case '1' :
-          $('#display-img').attr('src','/images/marketing.jpg');
+          $('#display-img').attr('src','/images/homeImage/'+service_1);
          break;
       case '2' :
-        $('#display-img').attr('src','/images/human-resource.jpg');
+        $('#display-img').attr('src','/images/homeImage/'+service_2);
          break;
       case '3' :
-        $('#display-img').attr('src','/images/human-resource.jpg');
+        $('#display-img').attr('src','/images/homeImage/'+service_3);
          break;
       } 
     });

@@ -11,19 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index');
 Route::get('/location',function(){
     return view('location');
 });
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/admin', function(){
     return view('admin.index');
 })->middleware('auth');
 
 Route::resource('/wanted','WantedController');
 Route::resource('/resume','ResumeController');
-
+Route::get('/homeManage','HomeController@homeManage');
+Route::post('/uploadImg','HomeController@uploadImg');

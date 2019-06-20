@@ -12,7 +12,15 @@
     <div class="animation">
       <div style="padding-top:33.33333%">
         <div class="img-box">
-            <img src="/images/banner.png" >
+            <div class="frame">
+              <div style="padding-top :50%;">
+                <img src="/images/buttom.png" alt="" id="buttom">
+                <img src="/images/main.png" alt="" id="main">
+                <img src="/images/me-the.png" alt="" id="methe">
+                <img src="/images/people.png" alt="" id="people">
+              </div>
+            </div>
+            {{-- <img src="/images/banner.png" > --}}
         </div>
         
       </div>
@@ -23,20 +31,20 @@
     {{-- /animation display --}}  
     {{--  --}}
     {{-- introduceing --}}
-    <div class="introduce-bg" style="background-image:url('/images/hand-shake.png');" >
+    {{-- style="background-image:url('/images/hand-shake.png');" --}}
+    <div class="introduce-bg" >
     </div>
     <div class="introduce">
       <div class="inbox">
-          <h2 class="mb-4">公司簡介</h2>
+          <h2 class="mb-4" style="color:#fff;">公司簡介</h2>
           <p>基於近年各行產業結構不停變換，企業求才若渴<p>
-          </p>坊間人力市場開發之相關公司品質良莠不齊，而公司人才之甄選工作，多由傳統方式代為打理。</p>
+          <p>坊間人力市場開發之相關公司品質良莠不齊，而公司人才之甄選工作，多由傳統方式代為打理。</p>
           <p>其效果不彰，故成立了迪曼人力資源公司專門為企業及求職者提供一個媒合平台，以期能促成勞、資雙贏。</p>
           <p>迪曼人力資源公司，是一家以『崇法』、『專業』、『熱誠』為核心價值的公司</p>
           <p>從成立至今都秉持著勞基法的精神，最高原則是熱誠和專業，以服務人為本，以安定社會為最高信仰，一路走來始終如一。</p>
           <p>現以“快速”、“簡單”、“有效”的經驗，提供企業需要的人才，協助企業解決“人”的問題</p>
           <p>也以“合情”、“合理”、“合法”提供求職者需要的工作期望。</p>
       </div>
-        
     </div>
     {{-- /introduceing --}}
 
@@ -61,7 +69,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="transform:translateY(-40px);">
               <div class="col-md-4"><h3>崇法</h3><h4>LAW-ABIDING</h4></div>
               <div class="col-md-4"><h3>專業</h3><h4>PROFESSIONAL</h4></div>
               <div class="col-md-4"><h3>熱忱</h3><h4>ENTHUSIASM</h4></div>
@@ -88,7 +96,7 @@
           
               <div>
                 <div class="service-display">
-                  <img id="display-img" src="/images/marketing.jpg" style="width:100%;" alt="">
+                <img id="display-img" src="/images/homeImage/{{$imgDic['service_1']->image}}" style="width:100%;" alt="">
                 </div>
               </div>
           </div>
@@ -184,5 +192,12 @@
 
 @section('js')
   {{-- <script src="/js/parallax.min.js"></script> --}}
+  <script>
+    var service_1 = '{{$imgDic['service_1']->image}}';
+    var service_2 = '{{$imgDic['service_2']->image}}';
+    var service_3 = '{{$imgDic['service_3']->image}}';
+    var wall_image_1 = '{{$imgDic['wall_image_1']->image}}';
+  </script>
   <script src="/js/_index.js"></script>
+
 @endsection

@@ -20,7 +20,7 @@
     </div>
     {{-- /background-image --}}
     <div class="cs-btn">
-        <a href="http://c109.pop800.com/web800/c.do?n=129431&type=1&url=http%3A%2F%2Fwww.jetly.com.tw%2Fdafang%2Fnews.php%3Ffn%3Ddetail%26amp%3Bid%3D25&l=ct&at=0" target="_blank"><img src="/images/support.png" alt=""></a>
+        <a href="http://c109.pop800.com/web800/c.do?n=129431&type=1&url=http%3A%2F%2Fwww.jetly.com.tw%2Fdafang%2Fnews.php%3Ffn%3Ddetail%26amp%3Bid%3D25&l=ct&at=0" target="_blank"><img class="support-img" src="/images/support.png" alt=""></a>
       </div>
       <div class="top-btn">
         <img src="/images/arrow-up.png" alt="">
@@ -32,6 +32,11 @@
         <img class="m-0 float-left" style="height:48px;width:auto;" src="/images/logo.png">
         <h4 class="m-0 float-right" style="line-height:48px;color:rgba(0,0,0,0.5)">服務電話：03-333-3333</h1>
     </div> --}}
+    <div style="position:absolute;left:12px;top:60px;height:56px;padding:8px;">
+      <img class="mr-2" style="height:100%;width:auto;" src="/images/dm.png">
+      <img class="mr-2" style="height:100%;width:auto;" src="/images/demand.png">
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-light">
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,6 +62,7 @@
                 </li>
               </ul>
             </div>
+            {{-- <h4 class="m-0 float-right" style="line-height:48px;color:rgba(0,0,0,0.5)">服務電話：03-333-3333</h4> --}}
     </nav>
     {{-- /navbar --}}
 

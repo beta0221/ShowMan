@@ -60,6 +60,7 @@
     <div class="sidebar">
         <ul>
             <li class="{{Request::is('admin')?'now':''}}"><a href="/admin">總覽</a></li>
+            <li class="{{Request::is('homeManage')?'now':''}}"><a href="/homeManage">首頁管理</a></li>
             <li class="{{Request::is('resume')?'now':''}}"><a href="/resume">履歷管理</a></li>
             <li class="{{Request::is('wanted')?'now':''}}"><a href="/wanted">徵才管理</a></li>
         </ul>
