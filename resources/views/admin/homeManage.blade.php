@@ -13,6 +13,7 @@
 <table id="data-table" class="display">
     <thead>
         <tr>
+            <th>#</th>
             <th>名稱</th>
             <th>圖片</th>
             <th>標籤</th>
@@ -21,8 +22,10 @@
     </thead>
     <tbody>
         @if(count($images)>0)
+          
             @foreach ($images as $image)
             <tr>
+                <td>{{$image->id}}</td>
                 <td>{{$image->name}}</td>
                 <td>
                   @if($image->image)
