@@ -76,7 +76,9 @@
 <script src="/js/datatables.min.js"></script>
 <script>
     $(document).ready( function () {
-        $('#data-table').DataTable();
+        $('#data-table').DataTable({
+            "pageLength": 20,
+        });
     } );
 </script>
 @yield('js')
