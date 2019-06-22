@@ -12,38 +12,41 @@
         <thead>
             <tr>
                 <th>姓名</th>
-                <th>性別</th>
-                <th>生日</th>
                 
-                {{-- <th>聯絡電話</th>
-                <th>手機</th>
-                <th>Email</th> --}}
+                
+                <th>住家電話</th>
+                <th>電話</th>
+                <th>Email</th>
+
                 <th>身高/體重</th>
-                {{-- <th>地址</th> --}}
+                
                 <th>教育程度</th>
                 <th>畢業學校</th>
-                <th>工作經歷</th>
-                <th>專長</th>
-                <th>基本資料</th>
+                
+                
+                
+                <th>-</th>
             </tr>
         </thead>
         <tbody>
             @if(count($resumes)>0)
                 @foreach($resumes as $res)
                 <tr>
-                    <td>{{$res->name}}</td>
-                    <td>{{($res->gender==true)?'男':'女'}}</td>
-                    <td>{{$res->birthday}}</td>
-                    {{-- <td>{{$res->tel}}</td>
+                    <td style="color:{{($res->gender==true)?'#007bff':'#dc3545'}};">{{$res->name}}</td>
+                    
+                    <td>{{$res->tel}}</td>
                     <td>{{$res->phone}}</td>
-                    <td>{{$res->email}}</td> --}}
+                    <td>{{$res->email}}</td>
+
                     <td>{{$res->height}}/{{$res->weight}}</td>
-                    {{-- <td>{{$res->address}}...</td> --}}
+                    
                     <td>{{$res->edu}}</td>
                     <td>{{$res->school}}</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+
+                    <td>
+                        <div class="btn btn-sm btn-info"><a class="text-white" href="/resume/{{$res->id}}" target="_blank">詳細</a></div>
+                    </td>
+
                 </tr>
                 @endforeach
             @endif

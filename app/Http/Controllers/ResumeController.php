@@ -57,8 +57,8 @@ class ResumeController extends Controller
             'address'=>'required|max:255',
             'edu'=>'required|max:255',
             'school'=>'required|max:255',
-            'experience'=>'required|max:1000',
-            'skill'=>'required|max:1000',
+            'experience'=>'max:1000',
+            'skill'=>'max:1000',
             'about'=>'max:1000',
         ]);
 
@@ -78,8 +78,8 @@ class ResumeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(resume $resume)
-    {
-        //
+    {   
+        return view('resume/show',['resume'=>$resume]);
     }
 
     /**

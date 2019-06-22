@@ -86,7 +86,7 @@
         <div class="row">
           <div class="col-md-10 offset-md-1">
               <div class="pb-3" style="">
-                  <h2 class="m-0 text-white" style="text-align:center;">服務項目</h2>
+                  <h2 class="text-white" style="text-align:center;margin-bottom:56px;">服務項目</h2>
               </div>
               <div class="service-title">
                   <ul class="m-0" style="list-style-type:none">

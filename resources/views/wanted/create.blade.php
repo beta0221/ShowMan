@@ -43,7 +43,7 @@
                             <h2>基本資料</h2>
                             <hr>
                                 <div class="form-group">
-                                    <label class=" control-label" for="company_id">統一編號</label>  
+                                    <label class=" control-label" for="company_id">統一編號<font color="red">＊</font></label>  
                                     <div class="">
                                     <input id="company_id" name="company_id" type="text" placeholder="統一編號" class="form-control input-md" required="true" maxlength="8" minlength="8">
                                       
@@ -52,7 +52,7 @@
                                   
                                   <!-- Text input-->
                                   <div class="form-group">
-                                    <label class=" control-label" for="company_name">公司名稱</label>  
+                                    <label class=" control-label" for="company_name">公司名稱<font color="red">＊</font></label>  
                                     <div class="">
                                     <input id="company_name" name="company_name" type="text" placeholder="公司名稱" class="form-control input-md" required="ture">
                                       
@@ -61,7 +61,7 @@
                                   
                                   <!-- Text input-->
                                   <div class="form-group">
-                                    <label class=" control-label" for="contact_name">聯絡人</label>  
+                                    <label class=" control-label" for="contact_name">聯絡人<font color="red">＊</font></label>  
                                     <div class="">
                                     <input id="contact_name" name="contact_name" type="text" placeholder="聯絡人" class="form-control input-md" required="">
                                       
@@ -70,7 +70,7 @@
                                   
                                   <!-- Text input-->
                                   <div class="form-group">
-                                    <label class=" control-label" for="fax">傳真</label>  
+                                    <label class=" control-label" for="fax">傳真<font color="red">＊</font></label>  
                                     <div class="">
                                     <input id="fax" name="fax" type="text" placeholder="傳真" class="form-control input-md" required>
                                       
@@ -79,7 +79,7 @@
                                   
                                   <!-- Text input-->
                                   <div class="form-group">
-                                    <label class=" control-label" for="contact_phone">聯絡電話</label>  
+                                    <label class=" control-label" for="contact_phone">聯絡電話<font color="red">＊</font></label>  
                                     <div class="">
                                     <input id="contact_phone" name="contact_phone" type="text" placeholder="聯絡電話" class="form-control input-md" required="">
                                       
@@ -88,7 +88,7 @@
                                   
                                   <!-- Text input-->
                                   <div class="form-group">
-                                    <label class=" control-label" for="email">E-mail</label>  
+                                    <label class=" control-label" for="email">E-mail<font color="red">＊</font></label>  
                                     <div class="">
                                     <input id="email" name="email" type="text" placeholder="E-mail" class="form-control input-md" required="true" email="true">
                                       
@@ -97,7 +97,7 @@
                                   
                                   <!-- Text input-->
                                   <div class="form-group">
-                                    <label class=" control-label" for="address">公司地址</label>  
+                                    <label class=" control-label" for="address">公司地址<font color="red">＊</font></label>  
                                     <div class="">
                                     <input id="address" name="address" type="text" placeholder="公司地址" class="form-control input-md" required="">
                                       
@@ -109,7 +109,7 @@
                                   
                                   <!-- Select Basic -->
                                   <div class="form-group">
-                                    <label class=" control-label" for="wanted_cat">服務項目</label>
+                                    <label class=" control-label" for="wanted_cat">服務項目<font color="red">＊</font></label>
                                     <div class="">
                                       <select id="wanted_cat" name="wanted_cat" class="form-control" required>
                                         <option value="高階人力派遣">高階人力派遣</option>
@@ -124,7 +124,7 @@
                                   <div class="form-group">
                                     <label class=" control-label" for="content">求才需求說明</label>
                                     <div class="">                     
-                                      <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+                                      <textarea class="form-control" id="content" name="content" rows="5"></textarea>
                                     </div>
                                   </div>
 

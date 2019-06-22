@@ -50,8 +50,9 @@ class WantedController extends Controller
             'fax'=>'required|max:255',
             'email'=>'required|email',
             'address'=>'required|max:1000',
-            'wanted_cat'=>'required|max:1000',
-            'content'=>'required',
+            'wanted_cat'=>'required|max:255',
+            'content'=>'max:1000',
+            'other'=>'max:1000',
         ]);
 
         try {
@@ -73,7 +74,7 @@ class WantedController extends Controller
      */
     public function show(wanted $wanted)
     {
-        //
+        return view('wanted.show',['wanted'=>$wanted]);
     }
 
     /**

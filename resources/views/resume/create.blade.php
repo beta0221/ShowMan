@@ -44,14 +44,14 @@
                             <h3>個人基本資料</h3>
                             <hr>
                                 <div class="form-group">
-                                    <label class=" control-label" for="name">姓名</label>  
+                                    <label class=" control-label" for="name">姓名<font color="red">＊</font></label>  
                                     <div class="">
                                         <input id="name" name="name" type="text" placeholder="姓名" class="form-control input-md" required="true">
                                     </div>
                                   </div>
                                   <!-- Select Basic -->
                                   <div class="form-group">
-                                        <label class=" control-label" for="gender">性別</label>
+                                        <label class=" control-label" for="gender">性別<font color="red">＊</font></label>
                                         <div class="">
                                           <select id="gender" name="gender" class="form-control" required>
                                             <option value="1">男</option>
@@ -61,14 +61,14 @@
                                       </div>
                                   
                                       <div class="form-group">
-                                            <label class=" control-label" for="birthday">出生日期</label>  
+                                            <label class=" control-label" for="birthday">出生日期<font color="red">＊</font></label>  
                                             <div class="">
                                                 <input id="birthday" name="birthday" type="date" placeholder="出生日期" class="form-control input-md" required="true">
                                             </div>
                                           </div>
                                     <!-- Text input-->
                                     <div class="form-group">
-                                        <label class=" control-label" for="tel">住家電話</label>  
+                                        <label class=" control-label" for="tel">住家電話<font color="red">＊</font></label>  
                                         <div class="">
                                         <input id="tel" name="tel" type="text" placeholder="住家電話" class="form-control input-md" required="ture">
                                         </div>
@@ -76,35 +76,35 @@
 
                                     <!-- Text input-->
                                     <div class="form-group">
-                                        <label class=" control-label" for="phone">行動電話</label>  
+                                        <label class=" control-label" for="phone">行動電話<font color="red">＊</font></label>  
                                         <div class="">
                                         <input id="phone" name="phone" type="text" placeholder="行動電話" class="form-control input-md" required="ture">
                                         </div>
                                     </div>
                                     <!-- Text input-->
                                   <div class="form-group">
-                                        <label class=" control-label" for="email">E-mail</label>  
+                                        <label class=" control-label" for="email">E-mail<font color="red">＊</font></label>  
                                         <div class="">
                                         <input id="email" name="email" type="text" placeholder="E-mail" class="form-control input-md" required="true" email="true">
                                         </div>
                                       </div>
                                     <!-- Text input-->
                                   <div class="form-group">
-                                        <label class=" control-label" for="height">身高</label>  
+                                        <label class=" control-label" for="height">身高<font color="red">＊</font></label>  
                                         <div class="">
                                         <input id="height" name="height" type="number" placeholder="身高" class="form-control input-md" required="ture">
                                         </div>
                                       </div>
                                       <!-- Text input-->
                                   <div class="form-group">
-                                        <label class=" control-label" for="weight">體重</label>  
+                                        <label class=" control-label" for="weight">體重<font color="red">＊</font></label>  
                                         <div class="">
                                         <input id="weight" name="weight" type="number" placeholder="體重" class="form-control input-md" required="ture">
                                         </div>
                                       </div>
                                       <!-- Text input-->
                                   <div class="form-group">
-                                        <label class=" control-label" for="address">地址</label>  
+                                        <label class=" control-label" for="address">地址<font color="red">＊</font></label>  
                                         <div class="">
                                         <input id="address" name="address" type="text" placeholder="地址" class="form-control input-md" required="">
                                         </div>
@@ -114,7 +114,7 @@
 
                                 <!-- Select Basic -->
                                 <div class="form-group">
-                                        <label class=" control-label" for="edu">教育程度</label>
+                                        <label class=" control-label" for="edu">教育程度<font color="red">＊</font></label>
                                         <div class="">
                                           <select id="edu" name="edu" class="form-control" required>
                                             <option value="國小">國小</option>
@@ -130,7 +130,7 @@
                                       
                                       <!-- Text input-->
                                   <div class="form-group">
-                                        <label class=" control-label" for="school">畢業學校</label>  
+                                        <label class=" control-label" for="school">畢業學校<font color="red">＊</font></label>  
                                         <div class="">
                                         <input id="school" name="school" type="text" placeholder="畢業學校" class="form-control input-md" required="ture">
                                         </div>
@@ -143,7 +143,7 @@
                                   <div class="form-group">
                                     <label class=" control-label" for="experience">工作經歷說明</label>
                                     <div class="">                     
-                                      <textarea class="form-control" id="experience" name="experience" rows="5" required></textarea>
+                                      <textarea class="form-control" id="experience" name="experience" rows="5"></textarea>
                                     </div>
                                   </div>
 
@@ -153,7 +153,7 @@
                                   <div class="form-group">
                                         <label class=" control-label" for="skill">證照</label>
                                         <div class="">                     
-                                          <textarea class="form-control" id="skill" name="skill" rows="5" required></textarea>
+                                          <textarea class="form-control" id="skill" name="skill" rows="5"></textarea>
                                         </div>
                                     </div>
 

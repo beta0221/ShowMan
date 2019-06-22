@@ -19,8 +19,8 @@
                 <th>傳真</th>
                 <th>地址</th>
                 <th>需求</th>
-                <th>內容</th>
-                <th>其他</th>
+                <th>-</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -35,8 +35,10 @@
                 <td>{{$w->fax}}</td>
                 <td>{{$w->address}}</td>
                 <td>{{$w->wanted_cat}}</td>
-                <td>-</td>
-                <td>-</td>
+                <td>    
+                    <div class="btn btn-sm btn-info"><a class="text-white" href="/wanted/{{$w->id}}" target="_blank">詳細</a></div>    
+                </td>
+                
                 </tr>
                 @endforeach
             @endif

@@ -16,7 +16,7 @@
 <body>
     {{-- background-image --}}
     <div class="background">
-      <img src="/images/bg3.png" alt="">
+      <img src="/images/bg-people.png" alt="">
     </div>
     {{-- /background-image --}}
     <div class="cs-btn">
