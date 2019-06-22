@@ -24,7 +24,14 @@
             @foreach ($images as $image)
             <tr>
                 <td>{{$image->name}}</td>
-                <td>{{($image->image)?$image->image:'無'}}</td>
+                <td>
+                  @if($image->image)
+                  <img style="height:40px;width:auto;" src="/images/homeImage/{{$image->image}}" alt="">
+                  @else
+                  無
+                  @endif
+
+                </td>
                 <td>{{($image->alt)?$image->alt:'無'}}</td>
             <td><div class="btn btn-success" data-toggle="modal" data-target="#exampleModal" onclick="upload('{{$image->position}}','{{$image->name}}');">修改</div></td>
             </tr>
