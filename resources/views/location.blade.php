@@ -16,13 +16,13 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <h4 style="">Google Map 1</h4>
+              <h4 style="">桃園總公司</h4>
               <div style="height:400px;background-color:lightgray;">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d904.0415414602588!2d121.28148032919778!3d24.99446909899943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f6dad9501cb%3A0x76ecc59ac3a3e10!2zMzMw5qGD5ZyS5biC5qGD5ZyS5Y2A5paH5Lit6LevNDkz6Jmf!5e0!3m2!1szh-TW!2stw!4v1560068979769!5m2!1szh-TW!2stw" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
               </div>
             </div>
             <div class="col-md-6">
-                <h4>Google Map 2</h4>
+                <h4>竹北辦事處</h4>
                 <div style="height:400px;background-color:lightgray;">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d904.0415414602588!2d121.28148032919778!3d24.99446909899943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f6dad9501cb%3A0x76ecc59ac3a3e10!2zMzMw5qGD5ZyS5biC5qGD5ZyS5Y2A5paH5Lit6LevNDkz6Jmf!5e0!3m2!1szh-TW!2stw!4v1560068979769!5m2!1szh-TW!2stw" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>

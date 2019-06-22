@@ -26,7 +26,7 @@
                 <td>{{$image->name}}</td>
                 <td>{{($image->image)?$image->image:'無'}}</td>
                 <td>{{($image->alt)?$image->alt:'無'}}</td>
-                <td><div class="btn btn-success" data-toggle="modal" data-target="#exampleModal" onclick="upload('{{$image->position}}');">修改</div></td>
+            <td><div class="btn btn-success" data-toggle="modal" data-target="#exampleModal" onclick="upload('{{$image->position}}','{{$image->name}}');">修改</div></td>
             </tr>
             @endforeach
         @endif
@@ -50,7 +50,8 @@
                     {{ csrf_field()}}
                     <input type="hidden" id="img_position" name="position" value="">
 
-                    <h5 id="position_name">位置</h5>
+                    <h5>位置</h5>
+                    <h6 id="position_name"></h6>
 
                     <div class="form-group">
                         <label for="">選擇圖片：</label>
@@ -76,7 +77,8 @@
 
 @section('js')
 <script>
-function upload(value){
+function upload(value,name){
+    $('#position_name').html(name);
     $('#img_position').val(value);
 }
 </script>
