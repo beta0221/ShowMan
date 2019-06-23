@@ -139,7 +139,7 @@
           <div class="col-md-6">
               <h4>竹北辦事處</h4>
               <div style="height:400px;background-color:lightgray;">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d904.0415414602588!2d121.28148032919778!3d24.99446909899943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f6dad9501cb%3A0x76ecc59ac3a3e10!2zMzMw5qGD5ZyS5biC5qGD5ZyS5Y2A5paH5Lit6LevNDkz6Jmf!5e0!3m2!1szh-TW!2stw!4v1560068979769!5m2!1szh-TW!2stw" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2088.196397447059!2d121.0159120288189!3d24.836596999291537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346836c23a91cc79%3A0x7a5c5d1ce5bc8879!2zMzAy5paw56u557ij56u55YyX5biC5paH5piO6KGXNTnomZ8!5e0!3m2!1szh-TW!2stw!4v1561299399948!5m2!1szh-TW!2stw" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
               </div>
           </div>
         </div>
