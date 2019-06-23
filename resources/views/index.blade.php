@@ -127,7 +127,7 @@
       {{-- /gallery --}}
 
     {{-- map --}}
-    <div class="map" style="padding:56px 0 ;">
+    <div class="map" style="padding:160px 0 ;">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
