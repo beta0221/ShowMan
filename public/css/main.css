@@ -37,13 +37,21 @@ div.background img{
 }
 .navbar ul li a {
   color: #fff!important;
+  font-size: 18px;
 }
 .navbar ul li:hover{
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 .nav-now{
   background-color: rgba(0,0,0,0.3);
   border-radius: .3rem;
+}
+.demand-logo{
+  position:absolute;
+  left:20px;
+  top:76px;
+  height:84px;
+  padding:8px;
 }
 /* float btn */
 .cs-btn{
@@ -55,7 +63,7 @@ div.background img{
   padding: 10px;
   border-radius: 50%;
   overflow: hidden;
-  background-color: rgba(3,110,184,0.9);
+  background-color: rgba(32, 152, 238, 0.9);
   cursor: pointer;
   z-index: 5;
 }

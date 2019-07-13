@@ -87,6 +87,10 @@
 
 @section('js')
 <script>
+  $(document).ready( function () {
+        $('#data-table').DataTable();
+            
+  });
 function upload(value,name){
     $('#position_name').html(name);
     $('#img_position').val(value);

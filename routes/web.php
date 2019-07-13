@@ -24,5 +24,6 @@ Route::get('/admin', function(){
 
 Route::resource('/wanted','WantedController');
 Route::resource('/resume','ResumeController');
+Route::resource('/contact','ContactController');
 Route::get('/homeManage','HomeController@homeManage');
 Route::post('/uploadImg','HomeController@uploadImg');

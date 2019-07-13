@@ -63,6 +63,7 @@
             <li class="{{Request::is('homeManage')?'now':''}}"><a href="/homeManage">首頁管理</a></li>
             <li class="{{Request::is('resume')?'now':''}}"><a href="/resume">履歷管理</a></li>
             <li class="{{Request::is('wanted')?'now':''}}"><a href="/wanted">徵才管理</a></li>
+            <li class="{{Request::is('contact')?'now':''}}"><a href="/contact">訊息管理</a></li>
         </ul>
     </div>
     <div class="content-outter">
@@ -70,17 +71,15 @@
     </div>
     
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+{{-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> --}}
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/datatables.min.js"></script>
-<script>
-    $(document).ready( function () {
-        $('#data-table').DataTable({
-            "pageLength": 20,
-        });
-    } );
-</script>
+
 @yield('js')
 </html>
 

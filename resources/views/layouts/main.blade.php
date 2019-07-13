@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="/open-iconic/font/css/open-iconic.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
     @yield('css')
 
@@ -32,13 +33,12 @@
         <img class="m-0 float-left" style="height:48px;width:auto;" src="/images/logo.png">
         <h4 class="m-0 float-right" style="line-height:48px;color:rgba(0,0,0,0.5)">服務電話：03-333-3333</h1>
     </div> --}}
-    <div style="position:absolute;left:12px;top:60px;height:56px;padding:8px;">
+    <div class="demand-logo">
       <img class="mr-2" style="height:100%;width:auto;" src="/images/dm.png">
       <img class="mr-2" style="height:100%;width:auto;" src="/images/demand.png">
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light">
-            
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -46,19 +46,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link {{Request::is('/')?'nav-now':'lll'}}" href="/">公司簡介 <span class="sr-only">(current)</span></a>
+                    
+                  <a class="nav-link {{Request::is('/')?'nav-now':'lll'}}" href="/"><span class="oi" data-glyph="home"></span>  公司簡介 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link {{Request::is('resume/create')?'nav-now':''}}" href="/resume/create">求職專區</a>
+                  <a class="nav-link {{Request::is('resume/create')?'nav-now':''}}" href="/resume/create"><span class="oi" data-glyph="person"></span>  求職專區</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link {{Request::is('wanted/create')?'nav-now':''}}" href="/wanted/create">企業求才</a>
+                  <a class="nav-link {{Request::is('wanted/create')?'nav-now':''}}" href="/wanted/create"><span class="oi" data-glyph="eye"></span>  企業求才</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link {{Request::is('location')?'nav-now':''}}" href="/location">服務據點</a>
+                  <a class="nav-link {{Request::is('location')?'nav-now':''}}" href="/location"><span class="oi" data-glyph="map-marker"></span>  服務據點</a>
                 </li>
+                {{-- <li class="nav-item">
+                    <a class="nav-link {{Request::is('location')?'nav-now':''}}" href="#"><span class="oi" data-glyph="menu"></span>  最新職缺</a>
+                  </li> --}}
                 <li class="nav-item">
-                  <a class="nav-link {{Request::is('contact/create')?'nav-now':''}}" href="http://c109.pop800.com/web800/c.do?n=129431&type=1&url=http%3A%2F%2Fwww.jetly.com.tw%2Fdafang%2Fnews.php%3Ffn%3Ddetail%26amp%3Bid%3D25&l=ct&at=0" target="_blank">聯繫我們</a>
+                  <a class="nav-link {{Request::is('contact/create')?'nav-now':''}}" href="/contact/create"><span class="oi" data-glyph="envelope-closed"></span>  聯繫我們</a>
                 </li>
               </ul>
             </div>

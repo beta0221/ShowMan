@@ -48,5 +48,10 @@
 @endsection
 
 @section('js')
-
+<script>
+$(document).ready( function () {
+        $('#data-table').DataTable();
+            
+});
+</script>
 @endsection
