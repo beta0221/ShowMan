@@ -25,5 +25,7 @@ Route::get('/admin', function(){
 Route::resource('/wanted','WantedController');
 Route::resource('/resume','ResumeController');
 Route::resource('/contact','ContactController');
+Route::resource('/jobrelease','JobreleaseController');
+Route::get('/jobbillboard','JobreleaseController@billboard');
 Route::get('/homeManage','HomeController@homeManage');
 Route::post('/uploadImg','HomeController@uploadImg');

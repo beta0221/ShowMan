@@ -33,11 +33,12 @@
         <img class="m-0 float-left" style="height:48px;width:auto;" src="/images/logo.png">
         <h4 class="m-0 float-right" style="line-height:48px;color:rgba(0,0,0,0.5)">服務電話：03-333-3333</h1>
     </div> --}}
+    @if(Request::is('/'))
     <div class="demand-logo">
       <img class="mr-2" style="height:100%;width:auto;" src="/images/dm.png">
       <img class="mr-2" style="height:100%;width:auto;" src="/images/demand.png">
     </div>
-
+    @endif
     <nav class="navbar navbar-expand-lg navbar-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -58,9 +59,9 @@
                 <li class="nav-item">
                   <a class="nav-link {{Request::is('location')?'nav-now':''}}" href="/location"><span class="oi" data-glyph="map-marker"></span>  服務據點</a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link {{Request::is('location')?'nav-now':''}}" href="#"><span class="oi" data-glyph="menu"></span>  最新職缺</a>
-                  </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link {{Request::is('jobbillboard')?'nav-now':''}}" href="/jobbillboard"><span class="oi" data-glyph="menu"></span>  最新職缺</a>
+                  </li>
                 <li class="nav-item">
                   <a class="nav-link {{Request::is('contact/create')?'nav-now':''}}" href="/contact/create"><span class="oi" data-glyph="envelope-closed"></span>  聯繫我們</a>
                 </li>
@@ -91,7 +92,11 @@
   
   
   
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  {{-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> --}}
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/main.js"></script>

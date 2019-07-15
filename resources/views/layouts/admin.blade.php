@@ -64,6 +64,7 @@
             <li class="{{Request::is('resume')?'now':''}}"><a href="/resume">履歷管理</a></li>
             <li class="{{Request::is('wanted')?'now':''}}"><a href="/wanted">徵才管理</a></li>
             <li class="{{Request::is('contact')?'now':''}}"><a href="/contact">訊息管理</a></li>
+            <li class="{{Request::is('jobrelease')?'now':''}}"><a href="/jobrelease">最新職缺</a></li>
         </ul>
     </div>
     <div class="content-outter">
