@@ -22,7 +22,7 @@
             list-style: none;
             padding: 8px 0;
         }
-        .sidebar ul li{
+        .sidebar ul li a{
             padding: 8px 12px;
             cursor: pointer;
         }

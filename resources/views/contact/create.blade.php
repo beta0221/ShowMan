@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label class=" control-label" for="name">姓名<font color="red">＊</font></label>  
                             <div class="">
-                            <input id="name" name="name" type="text" placeholder="姓名" class="form-control input-md" required="true" maxlength="8" minlength="8">
+                            <input id="name" name="name" type="text" placeholder="姓名" class="form-control input-md" required="true">
                               
                             </div>
                           </div>

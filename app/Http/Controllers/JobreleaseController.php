@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class JobreleaseController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['getJobRelease']);
+    }
     /**
      * Display a listing of the resource.
      *
