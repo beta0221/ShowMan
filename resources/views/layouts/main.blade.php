@@ -21,7 +21,7 @@
     </div>
     {{-- /background-image --}}
     <div class="cs-btn">
-        <a href="http://c109.pop800.com/web800/c.do?n=129431&type=1&url=http%3A%2F%2Fwww.jetly.com.tw%2Fdafang%2Fnews.php%3Ffn%3Ddetail%26amp%3Bid%3D25&l=ct&at=0" target="_blank"><img class="support-img" src="/images/support.png" alt=""></a>
+        <a href="http://c109.pop800.com/web800/c.do?n=129431&type=1&url=http%3A%2F%2Fwww.jetly.com.tw%2Fdafang%2Fnews.php%3Ffn%3Ddetail%26amp%3Bid%3D25&l=ct&at=0" target="_blank"><img class="support-img" src="/images/support2.png" alt=""></a>
       </div>
       <div class="top-btn">
         <img src="/images/arrow-up.png" alt="">
