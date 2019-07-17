@@ -89,7 +89,7 @@ div.background img{
 .top-btn{
   position: fixed;
   right: 20px;
-  bottom: 78px;
+  bottom: 88px;
   height: 56px;
   width: 56px;
   padding: 10px;
@@ -111,7 +111,61 @@ div.background img{
 
 
 .footer{
-    height: 160px;
+    height: 200px;
     background: linear-gradient( 200deg, rgba(2, 77, 131, 0.95) 0%, rgba(23, 28, 97, 0.9) 100%);
     color: #fff;
+  }
+
+  @media(max-width:450px){
+
+
+    div.background{
+      position:fixed;
+      top: 0;
+      left: 0;
+      width:100%;
+      height: 100%;
+      z-index: -1;
+    }
+    div.background img{
+      max-width: none;
+      transform: translateX(-50%);
+      height: 100%;
+    }
+    
+    /* navbar */
+    
+    
+    .navbar ul{
+        width:100%;
+        justify-content: center;
+    }
+    .navbar ul li{
+        margin:0 10px;
+    }
+    
+    .nav-now{
+      background-color: transparent;
+      border-radius: .3rem;
+    }
+    .demand-logo{
+      height:56px;
+    }
+    /* float btn */
+    
+     
+    
+    
+    
+    .outter{
+      margin: 56px 0;
+    }
+    
+    
+    .footer{
+        height: 480px;
+    }
+    .footer .col-md-3{
+      margin-bottom: 20px;
+    }
   }

@@ -152,10 +152,12 @@
 
 /* service */
 .service{
-  /* background: linear-gradient( 200deg, rgba(3, 110, 184, 0.95) 0%, rgba(23, 28, 97, 0.9) 100%); */
   background: linear-gradient( 200deg, rgba(2, 77, 131, 0.95) 0%, rgba(23, 28, 97, 0.9) 100%);
-  /* background-color: #fff; */
   padding: 72px 0 128px 0;
+}
+.service h2{
+  text-align:center;
+  margin-bottom:56px;
 }
 .service-title ul{
     padding:0;
@@ -186,7 +188,7 @@
 /* spirit */
 .spirit{
   text-align: center;
-  padding: 56px 0;
+  padding: 56px 0 180px 0;
 }
 .spirit .icon-box{
     padding-top: 100%;
@@ -197,9 +199,15 @@
     height:100%;
     top: 0;
     left: 0;
-    /* background-color: rgba(0,0,0,0.1); */
     border-radius: 50%;
     transform: scale(0.6);
+}
+
+.spirit .spirit-text{
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translateX(-50%);
 }
 
 
@@ -268,7 +276,9 @@
     
   }  
 }
-
+.map{
+  padding:160px 0 ;
+}
 /* map */
 .map h4{
   background-color:rgba(0,0,0,0.5);
@@ -278,4 +288,179 @@
   padding: 10px 20px;
   border-top-left-radius: .5rem;
   border-top-right-radius: .5rem;
+}
+
+@media(max-width:450px){
+/* animation */
+.animation{
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.animation .img-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+}
+.animation .frame{
+  width: 100%;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+}
+.animation .frame img{
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.frame #buttom{
+  animation-name: buttom;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate-reverse;
+  transform: translateX(200%);
+  animation-fill-mode: forwards;  
+}
+.frame #main{
+  animation-name: main;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate-reverse;
+  transform: translateX(-200%);
+  animation-fill-mode: forwards;  
+}
+.frame #people{
+  animation-name: people;
+  animation-duration: 2s;
+  animation-delay: 3s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate-reverse;
+  height: 0;
+  animation-fill-mode: forwards;  
+}
+.frame #methe{
+  animation-name: methe;
+  animation-duration: 3s;
+  animation-delay: 5s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate-reverse;
+  opacity: 0;
+  animation-fill-mode: forwards;  
+}
+
+
+
+.pointing-down{
+  bottom: -160px;
+}
+.pointing-down span{
+  font-size: 80px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 80px;
+  color: #fff;
+  transform: scale(0.6) translateY(20px);
+}
+
+/* introduce */
+.introduce-bg{
+    height: 600px;
+}
+.introduce{
+  height: 600px;
+  text-align:center;
+}
+
+.introduce .inbox{
+  height: 100%;
+  padding-top: 72px;
+}
+.introduce p{
+  font-size: 14px;
+  padding: 0 14px;
+}
+
+/* service */
+.service{
+  padding: 40px 0 40px 0;
+}
+.service-title ul{
+    padding:0;
+}
+.service h2{
+  margin-bottom:20px;
+}
+.service-title ul > li{
+    display: inline-block;
+    width:calc(100% / 3);
+    text-align: center;
+    line-height: 56px;
+    border-radius: .5rem .5rem 0 0;
+    cursor: pointer;
+    color: #fff;
+}
+.service-title ul > li.show{
+    background-color: rgba(0,0,0,0.3);
+}
+.service-display{
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    padding:56px;
+}
+
+
+
+
+/* spirit */
+
+.spirit .icon-box{
+    padding-top: 100%;
+}
+.spirit .icon-box img{
+  position: absolute;
+  width:100%;
+  height:100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transform: scale(0.6);
+}
+
+.spirit .spirit-text{
+position: absolute;
+left: 50%;
+top: 90%;
+transform: translateX(-50%);
+}
+
+
+/* gallery  */
+
+
+
+#gallery .gallery-slide {
+  width: 50%;
+}
+
+  .map{
+    padding:20px 0 ;
+  }
+  .map .second-map{
+    margin-top: 20px;
+  }
+  .map h4{
+    background-color:rgba(0,0,0,0.5);
+    color: #fff;
+    display:inline-block;
+    margin:0;
+    padding: 10px 20px;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+  }
 }

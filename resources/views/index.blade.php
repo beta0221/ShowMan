@@ -57,23 +57,22 @@
                   <div class="icon-box">
                     <img src="/images/law.png" alt="">
                   </div>
+                  <div class="spirit-text"><h3>崇法</h3><h4>LAW-ABIDING</h4></div>
                 </div>
                 <div class="col-md-4">
                     <div class="icon-box">
                       <img src="/images/professional.png" alt="">
                     </div>
+                    <div class="spirit-text"><h3>專業</h3><h4>PROFESSIONAL</h4></div>
                 </div>
                 <div class="col-md-4">
                     <div class="icon-box">
                       <img src="/images/enthusiasm.png" alt="">
                     </div>
+                    <div class="spirit-text"><h3>熱忱</h3><h4>ENTHUSIASM</h4></div>
                 </div>
             </div>
-            <div class="row" style="transform:translateY(-40px);">
-              <div class="col-md-4"><h3>崇法</h3><h4>LAW-ABIDING</h4></div>
-              <div class="col-md-4"><h3>專業</h3><h4>PROFESSIONAL</h4></div>
-              <div class="col-md-4"><h3>熱忱</h3><h4>ENTHUSIASM</h4></div>
-            </div>
+            
         </div>
     </div>
     {{-- /spirit --}}
@@ -86,7 +85,7 @@
         <div class="row">
           <div class="col-md-10 offset-md-1">
               <div class="pb-3" style="">
-                  <h2 class="text-white" style="text-align:center;margin-bottom:56px;">服務項目</h2>
+                  <h2 class="text-white">服務項目</h2>
               </div>
               <div class="service-title">
                   <ul class="m-0" style="list-style-type:none">
@@ -127,7 +126,7 @@
       {{-- /gallery --}}
 
     {{-- map --}}
-    <div class="map" style="padding:160px 0 ;">
+    <div class="map">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -136,7 +135,7 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d904.0415414602588!2d121.28148032919778!3d24.99446909899943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34681f6dad9501cb%3A0x76ecc59ac3a3e10!2zMzMw5qGD5ZyS5biC5qGD5ZyS5Y2A5paH5Lit6LevNDkz6Jmf!5e0!3m2!1szh-TW!2stw!4v1560068979769!5m2!1szh-TW!2stw" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 second-map">
               <h4>竹北辦事處</h4>
               <div style="height:400px;background-color:lightgray;">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2088.196397447059!2d121.0159120288189!3d24.836596999291537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346836c23a91cc79%3A0x7a5c5d1ce5bc8879!2zMzAy5paw56u557ij56u55YyX5biC5paH5piO6KGXNTnomZ8!5e0!3m2!1szh-TW!2stw!4v1561299399948!5m2!1szh-TW!2stw" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
