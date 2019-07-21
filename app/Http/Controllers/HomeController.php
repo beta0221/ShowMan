@@ -31,7 +31,7 @@ class HomeController extends Controller
         foreach ($images as $image) {
             $imgDic[$image->position] = $image; 
         }
-        return view('index',[
+        return view('home.index',[
             'imgDic' => $imgDic,
         ]);
     }
