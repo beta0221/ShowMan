@@ -34,7 +34,7 @@ class HomeController extends Controller
         }
 
         // return view('wanted.create');
-        return vuew('index');
+        return view('index');
         // return view('landing.homepage',[
         //     'imgDic' => $imgDic,
         // ]);
