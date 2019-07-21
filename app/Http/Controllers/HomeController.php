@@ -28,15 +28,16 @@ class HomeController extends Controller
     {
         $imgDic = [];
         $images = DB::table('images')->get();
+
         foreach ($images as $image) {
             $imgDic[$image->position] = $image; 
         }
 
         // return view('wanted.create');
-
-        return view('landing.homepage',[
-            'imgDic' => $imgDic,
-        ]);
+        return vuew('index');
+        // return view('landing.homepage',[
+        //     'imgDic' => $imgDic,
+        // ]);
     }
 
     public function homeManage()
