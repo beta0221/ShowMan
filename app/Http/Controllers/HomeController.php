@@ -33,11 +33,10 @@ class HomeController extends Controller
             $imgDic[$image->position] = $image; 
         }
 
-        // return view('wanted.create');
-        return view('index');
-        // return view('landing.homepage',[
-        //     'imgDic' => $imgDic,
-        // ]);
+        
+        return view('landing.homepage',[
+            'imgDic' => $imgDic,
+        ]);
     }
 
     public function homeManage()

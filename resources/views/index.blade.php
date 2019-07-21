@@ -1,12 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <h1>hello world</h1>
-</body>
-</html>
+@extends('layouts.admin')
+
+@section('title','首頁圖片管理')
+
+@section('css')
+
+@endsection
+
+@section('content')
+
+
+
+<table id="data-table" class="display">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>名稱</th>
+            <th>圖片</th>
+            <th>標籤</th>
+            <th>修改</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(count($images)>0)
+          
+            @foreach ($images as $image)
+            <tr>
+                <td>{{$image->id}}</td>
+                <td>{{$image->name}}</td>
+                <td>
+                  @if($image->image)
+                  <img style="height:40px;width:auto;" src="/images/homeImage/{{$image->image}}" alt="">
+                  @else
+                  無
+                  @endif
+
+                </td>
+                <td>{{($image->alt)?$image->alt:'無'}}</td>
+            <td><div class="btn btn-success" data-toggle="modal" data-target="#exampleModal" onclick="upload('{{$image->position}}','{{$image->name}}');">修改</div></td>
+            </tr>
+            @endforeach
+        @endif
+    </tbody>
+</table>
+
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">上傳圖片</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <form action="/uploadImg" method="POST" enctype="multipart/form-data">
+            <div class="modal-body">
+
+                    {{ csrf_field()}}
+                    <input type="hidden" id="img_position" name="position" value="">
+
+                    <h5>位置</h5>
+                    <h6 id="position_name"></h6>
+
+                    <div class="form-group">
+                        <label for="">選擇圖片：</label>
+                        <input type="file" class="form-control" name="image">
+                    </div>
+                    <div class="form-group">
+                        <label for="">圖片標籤（可忽略）：</label>
+                        <textarea name="alt" class="form-control"></textarea> 
+                    </div>  
+                
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">上傳</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+            
+
+@endsection
+
+@section('js')
+<script>
+  $(document).ready( function () {
+        $('#data-table').DataTable();
+            
+  });
+function upload(value,name){
+    $('#position_name').html(name);
+    $('#img_position').val(value);
+}
+</script>
+@endsection
