@@ -25,12 +25,10 @@ class ContactController extends Controller
 
     public function getContact(Request $request)
     {
-        // $draw = $_POST['draw'];
-        // $row = $_POST['start'];
-        // $rowperpage = $_POST['length']; // Rows display per page
+        
         $draw = $request->draw;
-        $row = $request->start;
-        $rowperpage = $request->length;
+        $row = (string)$request->start;
+        $rowperpage = (string)$request->length;
 
         $count = DB::table('contacts')->count();
         $result = Contact::skip($row)->take($rowperpage)->get();
