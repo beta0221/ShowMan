@@ -27,8 +27,8 @@ class JobreleaseController extends Controller
     public function getJobRelease(Request $request)
     {
         $draw = $request->draw;
-        $row = $request->start;
-        $rowperpage = $request->length;
+        $row = (string)$request->start;
+        $rowperpage = (string)$request->length;
 
         $count = DB::table('jobreleases')->count();
         $result = Jobrelease::skip($row)->take($rowperpage)->get();
