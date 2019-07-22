@@ -34,7 +34,7 @@ class HomeController extends Controller
         }
 
         
-        return view('landing.homepage',[
+        return view('index',[
             'imgDic' => $imgDic,
         ]);
     }
