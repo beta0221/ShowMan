@@ -209,6 +209,7 @@
   top: 90%;
   transform: translateX(-50%);
   color: rgb(255, 133, 20);
+  text-shadow: -5px 5px 6px #434a54;
 }
 
 
