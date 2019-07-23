@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/datatables.min.css">
-    <title>庶民生活後台｜@yield('title')</title>
+    <title>迪曼人力資源｜@yield('title')</title>
     <style>
         *{
             position: relative;
