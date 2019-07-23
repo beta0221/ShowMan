@@ -13,6 +13,24 @@ class ResumeController extends Controller
         $this->middleware('auth')->except(['create','store']);
     }
 
+
+    public function getResume(Request $request){
+
+        $draw = $request->draw;
+        $row = (string)$request->start;
+        $rowperpage = (string)$request->length;
+
+        $count = DB::table('resumes')->count();
+        $result = wanted::skip($row)->take($rowperpage)->get();
+        
+        return response()->json([
+            'draw'=>intval($draw),
+            'iTotalRecords'=>$count,
+            'iTotalDisplayRecords'=>$count,
+            'aaData'=>$result,
+        ]);
+
+    }
     /**
      * Display a listing of the resource.
      *
