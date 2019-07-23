@@ -10,7 +10,7 @@
     @yield('css')
 
 
-    <title>庶民生活人力｜@yield('title')</title>
+    <title>迪曼人力資源｜@yield('title')</title>
 
 </head>
 
