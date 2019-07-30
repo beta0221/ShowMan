@@ -131,6 +131,7 @@ class ContactController extends Controller
     }
 
     public function getMessage(Request $res){
+        
         $contact = Contact::findOrFail($res->id);
 
         return response()->json([
