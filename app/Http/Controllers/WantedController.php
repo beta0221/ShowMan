@@ -11,6 +11,24 @@ class WantedController extends Controller
     {
         $this->middleware('auth')->except(['create','store']);
     }
+
+    public function getWanted(Request $request){
+        $draw = $request->draw;
+        $row = (string)$request->start;
+        $rowperpage = (string)$request->length;
+
+        $count = DB::table('wanteds')->count();
+        $result = wanted::skip($row)->take($rowperpage)->get();
+        
+        return response()->json([
+            'draw'=>intval($draw),
+            'iTotalRecords'=>$count,
+            'iTotalDisplayRecords'=>$count,
+            'aaData'=>$result,
+        ]);
+    }
+
+
     /**
      * Display a listing of the resource.
      *

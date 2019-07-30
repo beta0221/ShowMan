@@ -8,7 +8,7 @@
 
 @section('content')
 
-<table id="data-table" class="display">
+    <table id="data-table" class="display">
         <thead>
             <tr>
                 <th>公司名稱</th>
@@ -50,8 +50,7 @@
 @section('js')
 <script>
 $(document).ready( function () {
-        $('#data-table').DataTable();
-            
+    $('#data-table').DataTable();
 });
 </script>
 @endsection
