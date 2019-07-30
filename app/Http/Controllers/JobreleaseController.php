@@ -93,7 +93,10 @@ class JobreleaseController extends Controller
 
     public function billboard()
     {
-        return view('jobrelease.billboard');
+        $jobreleases = Jobrelease::all();
+        return view('jobrelease.billboard',[
+            'jobreleases'=>$jobreleases,
+        ]);
     }
     /**
      * Display the specified resource.

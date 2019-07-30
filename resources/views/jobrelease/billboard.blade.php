@@ -7,7 +7,7 @@
 {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/datatables.min.css"/> --}}
 
 <style>
-    
+
 </style>
 
 @endsection
@@ -28,11 +28,26 @@
                         <th>聯絡電話</th>
                         <th>新增日期</th>
                         {{-- <th>-</th> --}}
-                        
+
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    @if(count($jobreleases)>0)
+                        @foreach($jobreleases as $index => $jobrelease)
+                        <tr>
+
+                            <td>{{$index}}</td>
+                            <td>{{$jobrelease->location}}</td>
+                            <td>{{$jobrelease->name}}</td>
+                            <td>{{$jobrelease->holiday}}</td>
+                            <td>{{$jobrelease->time}}</td>
+                            <td>{{$jobrelease->welfare}}</td>
+                            <td>{{$jobrelease->tel}}</td>
+                            <td>{{$jobrelease->created_at}}</td>
+
+                        </tr>
+                        @endforeach
+                    @endif
                 </tbody>
             </table>
 
@@ -50,27 +65,28 @@
 <script src="/js/datatables.min.js"></script>
 {{-- <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/datatables.min.js"></script> --}}
 <script>
-    
-    $(document).ready( function () {
-            $('#data-table').DataTable({
-                'processing': true,
-                'serverSide': true,
-                'serverMethod': 'GET',
-                'ajax': {
-                    'url':'/api/getJobRelease',
-                    'dataSrc':'aaData',
-                },
-                'columns': [
-                    { data: 'id' },
-                    { data: 'location' },
-                    { data: 'name' },
-                    { data: 'holiday' },
-                    { data: 'time' },
-                    { data: 'welfare' },
-                    { data: 'tel' },
-                    { data: 'created_at' },
-                ]
-            });
-    });
+    $(document).ready(function() {
+                $('#data-table').DataTable(
+                    //             {
+                    //             'processing': true,
+                    //             'serverSide': true,
+                    //             'serverMethod': 'GET',
+                    //             'ajax': {
+                    //                 'url':'/api/getJobRelease',
+                    //                 'dataSrc':'aaData',
+                    //             },
+                    //             'columns': [
+                    //                 { data: 'id' },
+                    //                 { data: 'location' },
+                    //                 { data: 'name' },
+                    //                 { data: 'holiday' },
+                    //                 { data: 'time' },
+                    //                 { data: 'welfare' },
+                    //                 { data: 'tel' },
+                    //                 { data: 'created_at' },
+                    //             ]
+                    //         });
+                    // }
+                );
 </script>
 @endsection
