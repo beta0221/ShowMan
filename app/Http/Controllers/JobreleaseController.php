@@ -69,7 +69,17 @@ class JobreleaseController extends Controller
         ]);
 
         try {
-            Jobrelease::create($request->all());
+            $jobrelease = new Jobrelease();
+            $jobrelease->location = $request->location;
+            $jobrelease->name = $request->name;
+            $jobrelease->holiday = $request->holiday;
+            $jobrelease->time = $request->time;
+            $jobrelease->welfare = $request->welfare;
+            $jobrelease->tel = $request->tel;
+            $jobrelease->img = $request->img;
+            $jobrelease->save();
+
+            // Jobrelease::create($request->all());
         } catch (\Throwable $th) {
             return redirect('/jobrelease/create')->with('status','新增失敗');
         }

@@ -75,8 +75,8 @@ class ContactController extends Controller
             $contact->save();
             // Contact::create($request->all());
         } catch (\Throwable $th) {
-            // return redirect('/contact/create')->with('status','傳送失敗');
-            return response($th);
+            return redirect('/contact/create')->with('status','傳送失敗');
+            // return response($th);
         }
 
         return redirect('/contact/create')->with('status','傳送成功');
