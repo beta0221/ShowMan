@@ -129,4 +129,14 @@ class ContactController extends Controller
     {
         //
     }
+
+    public function getMessage(Request $res){
+        $contact = Contact::findOrFail($res->id);
+
+        return response()->json([
+            'm'=>$contact->message,
+            's'=>1,
+        ]);
+
+    }
 }

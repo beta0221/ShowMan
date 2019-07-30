@@ -16,7 +16,7 @@
             <th>聯絡電話</th>
             <th>Ｅ-mail</th>
             <th>訊息</th>
-            {{-- <th>-</th> --}}
+            <th>-</th>
         </tr>
     </thead>
     <tbody>
@@ -28,7 +28,12 @@
                 <td>{{$contact->name}}</td>
                 <td>{{$contact->email}}</td>
                 <td>{{$contact->phone}}</td>
-                <td>{{$contact->message}}</td>
+                <td>{{(strlen($contact->message)>20)?mb_substr($contact->message,0,20).'...':$contact->message}}</td>
+                <td>
+                    <div class="btn btn-sm btn-info" onclick="getMessage({{$contact->id}});" data-toggle="modal" data-target="#myModal">
+                        詳細
+                    </div>
+                </td>
 
             </tr>
             @endforeach
@@ -36,29 +41,58 @@
     </tbody>
 </table>
 
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 @endsection
 
 @section('js')
 <script>
     $(document).ready(function() {
-        $('#data-table').DataTable(
-            //     {
-            //     'processing': true,
-            //     'serverSide': true,
-            //     'serverMethod': 'GET',
-            //     'ajax': {
-            //         'url':'/api/getContact',
-            //         'dataSrc':'aaData',
-            //     },
-            //     'columns': [
-            //         { data: 'id' },
-            //         { data: 'name' },
-            //         { data: 'email' },
-            //         { data: 'phone' },
-            //         { data: 'message' },
-            //     ]
-            // }
-        );
+        $('#data-table').DataTable();
+
+        $.ajaxSetup({
+  			headers: {
+    			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  			}
+		});
     });
+
+    function getMessage(id){
+        $.ajax({
+            type: "GET",
+            url: "/api/getMessage",
+            data: {
+                id:id
+            },
+            dataType: "json",
+            success: function (res) {
+                if(res.s==1){
+                    $('.modal-body').html(res.m);
+                }
+            },
+        });
+    }
+
+
 </script>
 @endsection
