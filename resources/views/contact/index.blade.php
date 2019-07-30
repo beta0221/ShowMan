@@ -78,8 +78,11 @@
 
     function getMessage(id){
         $.ajax({
-            type: "GET",
-            url: "/api/getMessage?id="+id,
+            type: "POST",
+            url: "/api/getMessage",
+            data: {
+                id:id
+            },
             dataType: "json",
             success: function (res) {
                 if(res.s==1){
