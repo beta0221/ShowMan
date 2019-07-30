@@ -67,7 +67,13 @@ class ContactController extends Controller
         ]);
 
         try {
-            Contact::create($request->all());
+            $contact = new Contact();
+            $contact->name = $request->name;
+            $contact->email = $request->email;
+            $contact->phone = $request->phone;
+            $contact->message = $request->message;
+            $contact->save();
+            // Contact::create($request->all());
         } catch (\Throwable $th) {
             // return redirect('/contact/create')->with('status','傳送失敗');
             return response($th);
