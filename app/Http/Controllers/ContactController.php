@@ -70,7 +70,7 @@ class ContactController extends Controller
             Contact::create($request->all());
         } catch (\Throwable $th) {
             // return redirect('/contact/create')->with('status','傳送失敗');
-            return redirect('/contact/create')->with('status',$th);
+            return response($th);
         }
 
         return redirect('/contact/create')->with('status','傳送成功');
