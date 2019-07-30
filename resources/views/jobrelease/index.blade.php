@@ -19,13 +19,13 @@
             <th>福利制度</th>
             <th>連路電話</th>
             <th>新增日期</th>
-            {{-- <th>-</th> --}}
+            <th>-</th>
         </tr>
     </thead>
     <tbody>
         @if(count($jobreleases)>0)
             @foreach($jobreleases as $index => $jobrelease)
-            <tr>
+            <tr class="tr_{{$jobrelease->id}}">
 
                 <td>{{$index}}</td>
                 <td>{{$jobrelease->location}}</td>
@@ -35,6 +35,11 @@
                 <td>{{$jobrelease->welfare}}</td>
                 <td>{{$jobrelease->tel}}</td>
                 <td>{{$jobrelease->created_at}}</td>
+                <td>
+                    <div class="btn btn-sm btn-danger" onclick="deleteJob({{$jobrelease->id}});">
+                        刪除
+                    </div>
+                </td>
 
             </tr>
             @endforeach
@@ -49,27 +54,29 @@
 
 <script>
     $(document).ready(function() {
-        $('#data-table').DataTable(
-            //     {
-            //     'processing': true,
-            //     'serverSide': true,
-            //     'serverMethod': 'GET',
-            //     'ajax': {
-            //         'url':'/api/getJobRelease',
-            //         'dataSrc':'aaData',
-            //     },
-            //     'columns': [
-            //         { data: 'id' },
-            //         { data: 'location' },
-            //         { data: 'name' },
-            //         { data: 'holiday' },
-            //         { data: 'time' },
-            //         { data: 'welfare' },
-            //         { data: 'tel' },
-            //         { data: 'created_at' },
-            //     ]
-            // }
-        );
+        $('#data-table').DataTable();
+
+        $.ajaxSetup({
+  			headers: {
+    			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  			}
+		});
     });
+
+    function deleteJob(id){
+        $.ajax({
+            type: "POST",
+            url: "/api/deleteJob",
+            data: {
+                id:id
+            },
+            dataType: "json",
+            success: function (res) {
+                if(res.s==1){
+                    $('.tr_'+id).remove();
+                }
+            },
+        });
+    }
 </script>
 @endsection

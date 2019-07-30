@@ -11,7 +11,7 @@ class JobreleaseController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['getJobRelease','billboard']);
+        $this->middleware('auth')->except(['getJobRelease','billboard','deleteJob']);
     }
     /**
      * Display a listing of the resource.
@@ -141,5 +141,20 @@ class JobreleaseController extends Controller
     public function destroy(Jobrelease $jobrelease)
     {
         //
+    }
+
+    public function deleteJob(Request $req)
+    {
+        try {
+            $job = Jobrelease::findOrFail($req->id);
+            $job->delete();
+        } catch (\Throwable $th) {
+            return response()->json([
+                's'=>0,
+            ]);
+        }
+        return response()->json([
+            's'=>1,
+        ]);
     }
 }
