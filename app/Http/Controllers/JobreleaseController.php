@@ -20,7 +20,10 @@ class JobreleaseController extends Controller
      */
     public function index()
     {
-        return view('jobrelease.index');
+        $jobreleases = Jobrelease::all();
+        return view('jobrelease.index',[
+            'jobreleases'=>$jobreleases,
+        ]);
     }
 
 

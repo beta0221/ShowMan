@@ -20,7 +20,10 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('contact.index');
+        $contacts = Contact::all();
+        return view('contact.index',[
+            'contacts'=>$contacts,
+        ]);
     }
 
     public function getContact(Request $request)
