@@ -83,7 +83,8 @@ class ResumeController extends Controller
         try {
             resume::create($request->all());
         } catch (\Throwable $th) {
-            return redirect('/resume/create')->with('status','傳送失敗，資料格式有誤。');
+            // return redirect('/resume/create')->with('status','傳送失敗，資料格式有誤。');
+            response($th);
         }
 
         return redirect('/resume/create')->with('status','傳送成功，我們已收到您的履歷。');
