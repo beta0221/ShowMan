@@ -81,6 +81,13 @@
         
       </div>
     </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="info">詳細內容</label>  
+      <div class="col-md-4">
+        <textarea name="info" id="info" style="width:100%;" rows="10"></textarea>
+      </div>
+    </div>
     
     <!-- Button -->
     <div class="form-group">

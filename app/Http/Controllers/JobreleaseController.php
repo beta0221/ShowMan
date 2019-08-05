@@ -80,6 +80,7 @@ class JobreleaseController extends Controller
             $jobrelease->welfare = $request->welfare;
             $jobrelease->tel = $request->tel;
             $jobrelease->img = $request->img;
+            $jobrelease->info = $request->info;
             $jobrelease->save();
 
             // Jobrelease::create($request->all());
