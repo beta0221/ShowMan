@@ -11,6 +11,13 @@
 <div class="outter">
 
     <div class="container">
+
+        <div class="row mb-4">
+            <div class="col-md-8 offset-md-2">
+                <div class="btn btn-info" onclick="location.href='/jobbillboard'">回目錄</div>
+            </div>
+        </div>
+
         <div class="row mb-4 banner">
             <div class="col-md-8 offset-md-2">
                 <img src="/images/1463.png" alt="">
@@ -24,15 +31,15 @@
 
 
                 <hr>
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">地點：<span>{{$job->location}}</span></label>
-                    
-                </div>
+                
 
                 <!-- Text input-->
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="textinput">職缺名稱：<span>{{$job->name}}</span></label>
-                    
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">地點：<span>{{$job->location}}</span></label>
                 </div>
 
                 <!-- Text input-->
