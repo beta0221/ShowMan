@@ -11,7 +11,7 @@ class JobreleaseController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['getJobRelease','billboard','deleteJob']);
+        $this->middleware('auth')->except(['getJobRelease','billboard','deleteJob','show']);
     }
     /**
      * Display a listing of the resource.
@@ -107,7 +107,10 @@ class JobreleaseController extends Controller
      */
     public function show(Jobrelease $jobrelease)
     {
-        //
+        
+        return view('jobrelease.show',[
+            'job'=>$jobrelease,
+        ]);
     }
 
     /**

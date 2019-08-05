@@ -45,7 +45,7 @@
                             <td>{{$jobrelease->tel}}</td>
                             <td>{{$jobrelease->created_at}}</td>
                             <td>
-                                <div class="btn btn-sm btn-info">詳細</div>
+                                <div class="btn btn-sm btn-info" onclick="location.href='/jobrelease/{{$jobrelease->id}}'">詳細</div>
                             </td>
 
                         </tr>
