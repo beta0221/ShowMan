@@ -27,7 +27,7 @@
                         <th>福利制度</th>
                         <th>聯絡電話</th>
                         <th>新增日期</th>
-                        {{-- <th>-</th> --}}
+                        <th>-</th>
 
                     </tr>
                 </thead>
@@ -36,7 +36,7 @@
                         @foreach($jobreleases as $index => $jobrelease)
                         <tr>
 
-                            <td>{{$index}}</td>
+                            <td>{{$index+1}}</td>
                             <td>{{$jobrelease->location}}</td>
                             <td>{{$jobrelease->name}}</td>
                             <td>{{$jobrelease->holiday}}</td>
@@ -44,6 +44,9 @@
                             <td>{{$jobrelease->welfare}}</td>
                             <td>{{$jobrelease->tel}}</td>
                             <td>{{$jobrelease->created_at}}</td>
+                            <td>
+                                <div class="btn btn-sm btn-info">詳細</div>
+                            </td>
 
                         </tr>
                         @endforeach
