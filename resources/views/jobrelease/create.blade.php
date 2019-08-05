@@ -26,12 +26,15 @@
     <fieldset>
     
     <!-- Form Name -->
-    <legend>新增最新職缺</legend>
+    <div class="col-md-6 offset-md-3 mt-4">
+      <legend>新增最新職缺</legend>
+    </div>
+    
     
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="textinput">地點</label>  
-      <div class="col-md-4">
+      <label class="col-md-6 offset-md-3 control-label" for="textinput">地點</label>  
+      <div class="col-md-6 offset-md-3">
       <input id="textinput" name="location" type="text" placeholder="地點" class="form-control input-md" required="true">
         
       </div>
@@ -39,8 +42,8 @@
 
     <!-- Text input-->
     <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput">職缺名稱</label>  
-        <div class="col-md-4">
+        <label class="col-md-6 offset-md-3 control-label" for="textinput">職缺名稱</label>  
+        <div class="col-md-6 offset-md-3">
         <input id="textinput" name="name" type="text" placeholder="職缺名稱" class="form-control input-md" required="true">
           
         </div>
@@ -48,8 +51,8 @@
 
       <!-- Text input-->
     <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput">休假制度</label>  
-        <div class="col-md-4">
+        <label class="col-md-6 offset-md-3 control-label" for="textinput">休假制度</label>  
+        <div class="col-md-6 offset-md-3">
         <input id="textinput" name="holiday" type="text" placeholder="休假制度" class="form-control input-md" required="true">
           
         </div>
@@ -57,8 +60,8 @@
     
     <!-- Text input-->
     <div class="form-group">
-        <label class="col-md-4 control-label" for="textinput">工作時段</label>  
-        <div class="col-md-4">
+        <label class="col-md-6 offset-md-3 control-label" for="textinput">工作時段</label>  
+        <div class="col-md-6 offset-md-3">
         <input id="textinput" name="time" type="text" placeholder="工作時段" class="form-control input-md" required="true">
           
         </div>
@@ -66,8 +69,8 @@
 
     <!-- Text input-->
     <div class="form-group">
-        <label class="col-md-4 control-label" for="sdf">福利制度</label>  
-        <div class="col-md-4">
+        <label class="col-md-6 offset-md-3 control-label" for="sdf">福利制度</label>  
+        <div class="col-md-6 offset-md-3">
         <input id="sdf" name="welfare" type="text" placeholder="福利制度" class="form-control input-md" required="true">
         
         </div>
@@ -75,23 +78,23 @@
     
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="dsf">聯絡電話</label>  
-      <div class="col-md-4">
+      <label class="col-md-6 offset-md-3 control-label" for="dsf">聯絡電話</label>  
+      <div class="col-md-6 offset-md-3">
       <input id="dsf" name="tel" type="text" placeholder="聯絡電話" class="form-control input-md" required="true">
         
       </div>
     </div>
 
     <div class="form-group">
-      <label class="col-md-4 control-label" for="info">詳細內容</label>  
-      <div class="col-md-4">
-        <textarea name="info" id="info" style="width:100%;" rows="10"></textarea>
+      <label class="col-md-6 offset-md-3 control-label" for="info">詳細內容</label>  
+      <div class="col-md-6 offset-md-3">
+        <textarea class="form-control" name="info" id="info" style="width:100%;" rows="10"></textarea>
       </div>
     </div>
     
     <!-- Button -->
     <div class="form-group">
-        <div class="col-md-4">
+        <div class="col-md-6 offset-md-3">
           <button id="singlebutton" class="btn btn-success btn-block">確定送出</button>
         </div>
       </div>

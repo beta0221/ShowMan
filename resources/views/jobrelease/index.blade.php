@@ -39,6 +39,10 @@
                     <div class="btn btn-sm btn-danger" onclick="deleteJob({{$jobrelease->id}});">
                         刪除
                     </div>
+                    <a class="btn btn-sm btn-warning">
+                        編輯
+                    </a>
+                    <a class="btn btn-sm btn-info" href="#">詳細</a>
                 </td>
 
             </tr>
