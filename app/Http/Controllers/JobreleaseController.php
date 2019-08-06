@@ -121,7 +121,9 @@ class JobreleaseController extends Controller
      */
     public function edit(Jobrelease $jobrelease)
     {
-        //
+        return view('/jobrelease.edit',[
+            'job'=>$jobrelease,
+        ]);
     }
 
     /**
@@ -133,7 +135,30 @@ class JobreleaseController extends Controller
      */
     public function update(Request $request, Jobrelease $jobrelease)
     {
-        //
+        $request->validate([
+            'location'=>'required|max:255',
+            'name'=>'required|max:255',
+            'holiday'=>'required|max:255',
+            'time'=>'required|max:255',
+            'welfare'=>'required|max:255',
+            'tel'=>'required|max:255',
+        ]);
+
+        try {
+            $jobrelease->name = $request->name;
+            $jobrelease->location = $request->location;
+            $jobrelease->holiday = $request->holiday;
+            $jobrelease->time = $request->time;
+            $jobrelease->welfare = $request->welfare;
+            $jobrelease->tel = $request->tel;
+            $jobrelease->info = $request->info;
+            $jobrelease->save();
+        } catch (\Throwable $th) {
+            return redirect("/jobrelease/$jobrelease->id/edit")->with('status','新增失敗');
+        }
+        
+
+        return redirect()->route('jobrelease.index');
     }
 
     /**

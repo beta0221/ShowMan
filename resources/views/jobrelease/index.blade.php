@@ -12,8 +12,8 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>地點</th>
             <th>職缺名稱</th>
+            <th>地點</th>
             <th>休假制度</th>
             <th>工作時段</th>
             <th>福利制度</th>
@@ -27,9 +27,9 @@
             @foreach($jobreleases as $index => $jobrelease)
             <tr class="tr_{{$jobrelease->id}}">
 
-                <td>{{$index}}</td>
-                <td>{{$jobrelease->location}}</td>
+                <td>{{$index+1}}</td>
                 <td>{{$jobrelease->name}}</td>
+                <td>{{$jobrelease->location}}</td>
                 <td>{{$jobrelease->holiday}}</td>
                 <td>{{$jobrelease->time}}</td>
                 <td>{{$jobrelease->welfare}}</td>
@@ -39,10 +39,10 @@
                     <div class="btn btn-sm btn-danger" onclick="deleteJob({{$jobrelease->id}});">
                         刪除
                     </div>
-                    <a class="btn btn-sm btn-warning">
+                <a class="btn btn-sm btn-warning" onclick="location.href='/jobrelease/{{$jobrelease->id}}/edit'">
                         編輯
                     </a>
-                    <a class="btn btn-sm btn-info" href="#">詳細</a>
+                    <a class="btn btn-sm btn-info" href="/jobrelease/{{$jobrelease->id}}" target="_blank">詳細</a>
                 </td>
 
             </tr>
