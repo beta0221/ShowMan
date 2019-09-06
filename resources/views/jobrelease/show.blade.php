@@ -68,7 +68,7 @@
 
                 <div class="form-group">
                     <label class="col-md-12 control-label" for="info">詳細內容：</label>
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                         <p>{!!$job->info!!}</p>
                     </div>
                 </div>
