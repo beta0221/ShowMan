@@ -141,9 +141,9 @@
                                   <hr>
                                   <!-- Textarea -->
                                   <div class="form-group">
-                                    <label class=" control-label" for="experience">工作經歷說明</label>
+                                    <label class=" control-label" for="experience">工作經歷說明<font color="red">＊</font></label>
                                     <div class="">                     
-                                      <textarea class="form-control" id="experience" name="experience" rows="5"></textarea>
+                                      <textarea class="form-control" id="experience" name="experience" rows="5" required="true"></textarea>
                                     </div>
                                   </div>
 

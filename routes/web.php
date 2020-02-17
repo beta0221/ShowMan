@@ -29,3 +29,11 @@ Route::resource('/jobrelease','JobreleaseController');
 Route::get('/jobbillboard','JobreleaseController@billboard');
 Route::get('/homeManage','HomeController@homeManage');
 Route::post('/uploadImg','HomeController@uploadImg');
+
+Route::get('temp/temp1',function(){
+    return view('temp1');
+});
+
+Route::get('temp/temp2',function(){
+    return view('temp2');
+});

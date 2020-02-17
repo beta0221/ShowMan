@@ -75,7 +75,7 @@ class ResumeController extends Controller
             'address'=>'required|max:255',
             'edu'=>'required|max:255',
             'school'=>'required|max:255',
-            'experience'=>'max:1000',
+            'experience'=>'required|max:1000',
             'skill'=>'max:1000',
             'about'=>'max:1000',
         ]);
@@ -84,7 +84,7 @@ class ResumeController extends Controller
             resume::create($request->all());
         } catch (\Throwable $th) {
             // return redirect('/resume/create')->with('status','傳送失敗，資料格式有誤。');
-            response($th);
+            return response($th);
         }
 
         return redirect('/resume/create')->with('status','傳送成功，我們已收到您的履歷。');
