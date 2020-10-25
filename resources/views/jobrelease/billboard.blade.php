@@ -31,27 +31,6 @@
 
                     </tr>
                 </thead>
-                <tbody>
-                    @if(count($jobreleases)>0)
-                        @foreach($jobreleases as $index => $jobrelease)
-                        <tr>
-
-                            <td>{{$index+1}}</td>
-                            <td>{{$jobrelease->location}}</td>
-                            <td>{{$jobrelease->name}}</td>
-                            <td>{{$jobrelease->holiday}}</td>
-                            <td>{{$jobrelease->time}}</td>
-                            <td>{{$jobrelease->welfare}}</td>
-                            <td>{{$jobrelease->tel}}</td>
-                            <td>{{$jobrelease->created_at}}</td>
-                            <td>
-                                <div class="btn btn-sm btn-info" onclick="location.href='/jobrelease/{{$jobrelease->id}}'">詳細</div>
-                            </td>
-
-                        </tr>
-                        @endforeach
-                    @endif
-                </tbody>
             </table>
 
         </div>
@@ -69,28 +48,47 @@
 {{-- <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/datatables.min.js"></script> --}}
 <script>
     $(document).ready(function() {
-                $('#data-table').DataTable(
-                    //             {
-                    //             'processing': true,
-                    //             'serverSide': true,
-                    //             'serverMethod': 'GET',
-                    //             'ajax': {
-                    //                 'url':'/api/getJobRelease',
-                    //                 'dataSrc':'aaData',
-                    //             },
-                    //             'columns': [
-                    //                 { data: 'id' },
-                    //                 { data: 'location' },
-                    //                 { data: 'name' },
-                    //                 { data: 'holiday' },
-                    //                 { data: 'time' },
-                    //                 { data: 'welfare' },
-                    //                 { data: 'tel' },
-                    //                 { data: 'created_at' },
-                    //             ]
-                    //         });
-                    // }
-                );
+
+        var table = $('#data-table').DataTable({
+            'searching':false,
+            "processing": true,
+            "serverSide": true,
+            'ajax':'/api/getJobList',
+            columns: [
+                { data: null },
+                { data: 'location' },
+                { data: 'name' },
+                { data: 'holiday' },
+                { data: 'time' },
+                { data: 'welfare' },
+                { data: 'tel' },
+                { data: 'created_at' },
+                { data: null },
+            ],
+            "columnDefs": [
+                {
+                    "targets": -1,
+                    "data": null,
+                    "defaultContent": `<button class="btn btn-sm btn-info">詳細</button>`
+                },
+            ]
+        });
+
+
+        $('#data-table tbody').on( 'click', 'button', function () {
+            var data = table.row( $(this).parents('tr') ).data();
+            location.href=`/jobrelease/${data.id}`;
+        } );
+
+        table.on( 'draw.dt order.dt search.dt', function () {
+            table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                cell.innerHTML = i+1;
+            } );
+        } );
+
+
     });
+
+
 </script>
 @endsection

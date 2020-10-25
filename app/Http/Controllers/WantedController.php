@@ -9,7 +9,7 @@ class WantedController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['create','store']);
+        $this->middleware('auth')->except(['create','store','getWanted']);
     }
 
     public function getWanted(Request $request){
@@ -17,13 +17,14 @@ class WantedController extends Controller
         $row = (string)$request->start;
         $rowperpage = (string)$request->length;
 
-        $count = DB::table('wanteds')->count();
+        $total = wanted::count();;
+        
         $result = wanted::skip($row)->take($rowperpage)->get();
         
         return response()->json([
             'draw'=>intval($draw),
-            'iTotalRecords'=>$count,
-            'iTotalDisplayRecords'=>$count,
+            'iTotalRecords'=>$total,
+            'iTotalDisplayRecords'=>$total,
             'aaData'=>$result,
         ]);
     }
@@ -36,10 +37,8 @@ class WantedController extends Controller
      */
     public function index()
     {
-        $wanted = wanted::all();
-        return view('wanted.index',[
-            'wanted'=>$wanted,
-        ]);
+        //$wanted = wanted::all();
+        return view('wanted.index');
     }
 
     /**

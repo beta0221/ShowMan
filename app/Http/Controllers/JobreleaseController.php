@@ -11,7 +11,7 @@ class JobreleaseController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['getJobRelease','billboard','deleteJob','show']);
+        $this->middleware('auth')->except(['getJobRelease','billboard','deleteJob','show','getJobList']);
     }
     /**
      * Display a listing of the resource.
@@ -20,10 +20,8 @@ class JobreleaseController extends Controller
      */
     public function index()
     {
-        $jobreleases = Jobrelease::all();
-        return view('jobrelease.index',[
-            'jobreleases'=>$jobreleases,
-        ]);
+        //$jobreleases = Jobrelease::all();
+        return view('jobrelease.index');
     }
 
 
@@ -94,11 +92,27 @@ class JobreleaseController extends Controller
 
     public function billboard()
     {
-        $jobreleases = Jobrelease::all();
-        return view('jobrelease.billboard',[
-            'jobreleases'=>$jobreleases,
+        return view('jobrelease.billboard');
+    }
+
+    public function getJobList(Request $request){
+        
+        $total = Jobrelease::count();
+        $length = $request->length;
+        $draw = $request->draw;
+        $start = $request->start;
+
+        $jobList = Jobrelease::skip($start)->take($length)->get();
+
+        return response([
+            'data'=>$jobList,
+            'draw'=>$draw,
+            'recordsTotal'=>$total,
+            'iTotalDisplayRecords'=>$total,
+            'recordsFiltered'=>$length,
         ]);
     }
+
     /**
      * Display the specified resource.
      *

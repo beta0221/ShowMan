@@ -24,24 +24,6 @@
             </tr>
         </thead>
         <tbody>
-            @if(count($wanted)>0)
-                @foreach($wanted as $w)
-                <tr>
-                <td>{{$w->company_name}}</td>
-                <td>{{$w->company_id}}</td>
-                <td>{{$w->contact_name}}</td>
-                <td>{{$w->contact_phone}}</td>
-                <td>{{$w->email}}</td>
-                <td>{{$w->fax}}</td>
-                <td>{{$w->address}}</td>
-                <td>{{$w->wanted_cat}}</td>
-                <td>    
-                    <div class="btn btn-sm btn-info"><a class="text-white" href="/wanted/{{$w->id}}" target="_blank">詳細</a></div>    
-                </td>
-                
-                </tr>
-                @endforeach
-            @endif
         </tbody>
 </table>
 
@@ -50,7 +32,31 @@
 @section('js')
 <script>
 $(document).ready( function () {
-    $('#data-table').DataTable();
+    
+    var table = $('#data-table').DataTable({
+        'searching':false,
+            "processing": true,
+            "serverSide": true,
+            'ajax':'/api/getWanted',
+            columns: [
+                { data: 'company_name' },
+                { data: 'company_id' },
+                { data: 'contact_name' },
+                { data: 'contact_phone' },
+                { data: 'email' },
+                { data: 'fax' },
+                { data: 'address' },
+                { data: 'wanted_cat' },
+                { data: null },
+            ],
+    });
+
+    table.on( 'draw.dt order.dt search.dt', function () {
+        table.column(8, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            let data = table.row(i).data();
+            cell.innerHTML = `<div class="btn btn-sm btn-info"><a class="text-white" href="/wanted/${data.id}" target="_blank">詳細</a></div>`;
+        });
+    });
 });
 </script>
 @endsection

@@ -23,7 +23,7 @@
         </tr>
     </thead>
     <tbody>
-        @if(count($jobreleases)>0)
+        {{-- @if(count($jobreleases)>0)
             @foreach($jobreleases as $index => $jobrelease)
             <tr class="tr_{{$jobrelease->id}}">
 
@@ -47,7 +47,7 @@
 
             </tr>
             @endforeach
-        @endif
+        @endif --}}
     </tbody>
 </table>
 
@@ -58,7 +58,44 @@
 
 <script>
     $(document).ready(function() {
-        $('#data-table').DataTable();
+        var table = $('#data-table').DataTable({
+            'searching':false,
+            "processing": true,
+            "serverSide": true,
+            'ajax':'/api/getJobList',
+            columns: [
+                { data: null },
+                { data: 'location' },
+                { data: 'name' },
+                { data: 'holiday' },
+                { data: 'time' },
+                { data: 'welfare' },
+                { data: 'tel' },
+                { data: 'created_at' },
+                { data: null },
+            ],
+        });
+
+
+        table.on( 'draw.dt order.dt search.dt', function () {
+            table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                cell.innerHTML = i+1;
+            });
+
+
+            table.column(8, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                let data = table.row(i).data();
+                cell.innerHTML = `
+                <div class="btn btn-sm btn-danger" onclick="deleteJob(${data.id});">刪除</div>
+                <a class="btn btn-sm btn-warning" href='/jobrelease/${data.id}/edit'">編輯</a>
+                <a class="btn btn-sm btn-info" href="/jobrelease/${data.id}" target="_blank">詳細</a>
+                `;
+            });
+
+                
+                
+                
+        });
 
         $.ajaxSetup({
   			headers: {
@@ -77,7 +114,7 @@
             dataType: "json",
             success: function (res) {
                 if(res.s==1){
-                    $('.tr_'+id).remove();
+                    window.location.reload();
                 }
             },
         });

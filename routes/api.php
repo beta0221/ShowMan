@@ -22,5 +22,8 @@ Route::get('getJobRelease','JobreleaseController@getJobRelease');
 Route::get('getWanted','WantedController@getWanted');
 Route::get('getResume','ResumeController@getResume');
 
+
+Route::get('getJobList','JobreleaseController@getJobList');
+
 Route::post('deleteJob', 'JobreleaseController@deleteJob');
 Route::post('getMessage','ContactController@getMessage');

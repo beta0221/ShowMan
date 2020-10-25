@@ -29,27 +29,6 @@
             </tr>
         </thead>
         <tbody>
-            @if(count($resumes)>0)
-                @foreach($resumes as $res)
-                <tr>
-                    <td style="color:{{($res->gender==true)?'#007bff':'#dc3545'}};">{{$res->name}}</td>
-                    
-                    <td>{{$res->tel}}</td>
-                    <td>{{$res->phone}}</td>
-                    <td>{{$res->email}}</td>
-
-                    <td>{{$res->height}}/{{$res->weight}}</td>
-                    
-                    <td>{{$res->edu}}</td>
-                    <td>{{$res->school}}</td>
-
-                    <td>
-                        <div class="btn btn-sm btn-info"><a class="text-white" href="/resume/{{$res->id}}" target="_blank">詳細</a></div>
-                    </td>
-
-                </tr>
-                @endforeach
-            @endif
         </tbody>
 </table>
 
@@ -60,7 +39,36 @@
 @section('js')
 <script>
     $(document).ready( function () {
-        $('#data-table').DataTable();
+        var table = $('#data-table').DataTable({
+            'searching':false,
+            "processing": true,
+            "serverSide": true,
+            'ajax':'/api/getResume',
+            columns: [
+                { data: 'name' },
+                { data: 'tel' },
+                { data: 'phone' },
+                { data: 'email' },
+                { data: null },
+                { data: 'edu' },
+                { data: 'school' },
+                { data: null },
+            ],
+        });
+
+        table.on( 'draw.dt order.dt search.dt', function () {
+            table.column(4, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                let data = table.row(i).data();
+                let text = data.height + '/' + data.weight;
+                cell.innerHTML = text;
+            } );
+
+            table.column(7, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                let data = table.row(i).data();
+                cell.innerHTML = `<div class="btn btn-sm btn-info"><a class="text-white" href="/resume/${data.id}" target="_blank">詳細</a></div>`;
+            } );
+
+        } );
             
     });
 </script>

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
@@ -33,7 +32,7 @@ class ContactController extends Controller
         $row = (string)$request->start;
         $rowperpage = (string)$request->length;
 
-        $count = DB::table('contacts')->count();
+        $count = Contact::count();
         $result = Contact::skip($row)->take($rowperpage)->get();
         
         return response()->json([

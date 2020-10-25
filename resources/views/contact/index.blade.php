@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        @if(count($contacts)>0)
+        {{-- @if(count($contacts)>0)
             @foreach($contacts as $index => $contact)
             <tr>
 
@@ -37,7 +37,7 @@
 
             </tr>
             @endforeach
-        @endif
+        @endif --}}
     </tbody>
 </table>
 
@@ -66,8 +66,45 @@
 
 @section('js')
 <script>
+
     $(document).ready(function() {
-        $('#data-table').DataTable();
+        var table = $('#data-table').DataTable({
+            'searching':false,
+            "processing": true,
+            "serverSide": true,
+            'ajax':'/api/getContact',
+            columns: [
+                { data: null },
+                { data: 'name' },
+                { data: 'email' },
+                { data: 'phone' },
+                { data: null },
+                { data: null },
+            ],
+        });
+
+
+        table.on( 'draw.dt order.dt search.dt', function () {
+            table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                cell.innerHTML = i+1;
+            });
+
+            table.column(4, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                let data = table.row(i).data();
+                let message = data.message;
+                if(message.length > 20){
+                    message = message.substring(0,20) + '...';
+                }
+                cell.innerHTML = message;
+            });
+
+            table.column(5, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                let data = table.row(i).data();
+                cell.innerHTML = `<div class="btn btn-sm btn-info" onclick="getMessage(${data.id});" data-toggle="modal" data-target="#myModal">詳細</div>`;
+            } );
+
+        } );
+
 
         $.ajaxSetup({
   			headers: {

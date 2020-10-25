@@ -10,7 +10,7 @@ class ResumeController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['create','store']);
+        $this->middleware('auth')->except(['create','store','getResume']);
     }
 
 
@@ -20,14 +20,14 @@ class ResumeController extends Controller
         $row = (string)$request->start;
         $rowperpage = (string)$request->length;
 
-        $count = DB::table('resumes')->count();
-        $result = wanted::skip($row)->take($rowperpage)->get();
+        $count = resume::count();;
+        $result = resume::skip($row)->take($rowperpage)->get();
         
-        return response()->json([
+        return response([
             'draw'=>intval($draw),
             'iTotalRecords'=>$count,
             'iTotalDisplayRecords'=>$count,
-            'aaData'=>$result,
+            'data'=>$result,
         ]);
 
     }
@@ -38,11 +38,9 @@ class ResumeController extends Controller
      */
     public function index()
     {
-        $resumes = Resume::all();
+        //$resumes = Resume::all();
         
-        return view('resume.index',[
-            'resumes'=>$resumes,
-        ]);
+        return view('resume.index');
     }
 
     /**
