@@ -98,11 +98,17 @@ class JobreleaseController extends Controller
     public function getJobList(Request $request){
         
         $total = Jobrelease::count();
-        $length = (string)$request->length;
+        $length = $request->length;
         $draw = $request->draw;
-        $start = (string)$request->start;
+        $row = $request->start;
 
-        $jobList = Jobrelease::skip($start)->take($length)->get();
+        $query = new Jobrelease();
+        $query = $query->take($length);
+        if($row){
+            $query->skip($row);
+        }
+        $jobList = $query->get();
+        
 
         return response([
             'data'=>$jobList,
