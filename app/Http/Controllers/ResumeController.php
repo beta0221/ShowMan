@@ -17,11 +17,16 @@ class ResumeController extends Controller
     public function getResume(Request $request){
 
         $draw = $request->draw;
-        $row = (string)$request->start;
-        $rowperpage = (string)$request->length;
+        $row = $request->start;
+        $rowperpage = $request->length;
 
         $count = resume::count();;
-        $result = resume::skip($row)->take($rowperpage)->get();
+        $query = new resume();
+        $query = $query->take($rowperpage);
+        if($row){
+            $query->skip($row);
+        }
+        $result = $query->get();
         
         return response([
             'draw'=>intval($draw),

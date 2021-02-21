@@ -29,11 +29,16 @@ class ContactController extends Controller
     {
         
         $draw = $request->draw;
-        $row = (string)$request->start;
-        $rowperpage = (string)$request->length;
+        $row = $request->start;
+        $rowperpage = $request->length;
 
         $count = Contact::count();
-        $result = Contact::skip($row)->take($rowperpage)->orderBy('id','desc')->get();
+        $query = new Contact();
+        $query = $query->take($rowperpage);
+        if($row){
+            $query->skip($row);
+        }
+        $result = $query->orderBy('id','desc')->get();
         
         return response()->json([
             'draw'=>intval($draw),

@@ -14,12 +14,17 @@ class WantedController extends Controller
 
     public function getWanted(Request $request){
         $draw = $request->draw;
-        $row = (string)$request->start;
-        $rowperpage = (string)$request->length;
+        $row = $request->start;
+        $rowperpage = $request->length;
 
         $total = wanted::count();;
         
-        $result = wanted::skip($row)->take($rowperpage)->get();
+        $query = new wanted();
+        $query = $query->take($rowperpage);
+        if($row){
+            $query->skip($row);
+        }
+        $result = $query->get();
         
         return response()->json([
             'draw'=>intval($draw),
