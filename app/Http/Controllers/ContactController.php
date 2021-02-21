@@ -29,8 +29,8 @@ class ContactController extends Controller
     {
         
         $draw = $request->draw;
-        $row = $request->start;
-        $rowperpage = $request->length;
+        $row = (string)$request->start;
+        $rowperpage = (string)$request->length;
 
         $count = Contact::count();
         $result = Contact::skip($row)->take($rowperpage)->orderBy('id','desc')->get();
