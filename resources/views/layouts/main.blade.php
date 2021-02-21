@@ -77,10 +77,10 @@
     <div class="footer" style="padding:40px 0;">
         <div class="container">
           <div class="row pb-4">
-            <div class="col-md-3">E-mail：<br>桃園：dafang.ce@gmail.com<br>竹北：dafang050@gmail.com</div>
-            <div class="col-md-3">電話：<br>桃園：(03)-360-6001<br>竹北：(03)-602-7499</div>
-            <div class="col-md-3">傳真：<br>桃園：(03)-360-6005<br>竹北：(03)-553-9086</div>
-            <div class="col-md-3">地址：<br>桃園市桃園區文中路493號4樓<br>新竹縣竹北市文明街59號</div>
+            <div class="col-md-3">E-mail：<br>桃園：dafang.ce@gmail.com</div>
+            <div class="col-md-3">電話：<br>桃園：(03)-360-6001</div>
+            <div class="col-md-3">傳真：<br>桃園：(03)-360-6005</div>
+            <div class="col-md-3">地址：<br>桃園市桃園區文中路493號4樓</div>
           </div>
           <div class="row mt-2">
             <div class="col-md-12" style="text-align:center;">

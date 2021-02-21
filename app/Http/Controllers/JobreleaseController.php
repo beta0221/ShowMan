@@ -32,7 +32,7 @@ class JobreleaseController extends Controller
         $rowperpage = $request->length;
 
         $count = DB::table('jobreleases')->count();
-        $result = Jobrelease::skip($row)->take($rowperpage)->orderBy('id','desc')->get();
+        $result = Jobrelease::offset($row)->limit($rowperpage)->orderBy('id','desc')->get();
         
         return response()->json([
             'draw'=>intval($draw),
