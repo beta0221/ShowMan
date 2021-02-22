@@ -78,9 +78,9 @@
         <div class="container">
           <div class="row pb-4">
             <div class="col-md-3">E-mail：<br>桃園：dafang.ce@gmail.com</div>
-            <div class="col-md-3">電話：<br>桃園：(03)-360-6001</div>
+            <div class="col-md-3">電話：<br>桃園：(03)-275-6369</div>
             <div class="col-md-3">傳真：<br>桃園：(03)-360-6005</div>
-            <div class="col-md-3">地址：<br>桃園市桃園區文中路493號4樓</div>
+            <div class="col-md-3">地址：<br>桃園市桃園區中正路1090號7樓</div>
           </div>
           <div class="row mt-2">
             <div class="col-md-12" style="text-align:center;">
