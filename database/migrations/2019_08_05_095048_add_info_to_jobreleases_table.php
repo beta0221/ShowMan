@@ -14,7 +14,7 @@ class AddInfoToJobreleasesTable extends Migration
     public function up()
     {
         Schema::table('jobreleases', function (Blueprint $table) {
-            $table->string('info')->nullable()->after('img');
+            $table->mediumText('info')->nullable()->after('img');
         });
     }
 
