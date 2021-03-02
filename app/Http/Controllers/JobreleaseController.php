@@ -107,8 +107,8 @@ class JobreleaseController extends Controller
         $draw = $request->draw;
         $row = $request->start;
 
-        $query = new Jobrelease();
-        $query = $query->take($length);
+        //$query = new Jobrelease();
+        $query = Jobrelease::take($length);
         if($row){
             $query->skip($row);
         }
