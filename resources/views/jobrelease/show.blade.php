@@ -62,6 +62,11 @@
 
                 <!-- Text input-->
                 <div class="form-group">
+                    <label class="col-md-4 control-label" for="sdf">薪資待遇：<span>{{$job->salary}}</span></label>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
                     <label class="col-md-4 control-label" for="dsf">聯絡電話：<span>{{$job->tel}}</span></label>
                     
                 </div>

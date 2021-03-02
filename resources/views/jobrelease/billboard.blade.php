@@ -25,6 +25,7 @@
                         <th>休假制度</th>
                         <th>工作時段</th>
                         <th>福利制度</th>
+                        <th>薪資待遇</th>
                         <th>聯絡電話</th>
                         <th>新增日期</th>
                         <th>-</th>
@@ -61,6 +62,7 @@
                 { data: 'holiday' },
                 { data: 'time' },
                 { data: 'welfare' },
+                { data: 'salary' },
                 { data: 'tel' },
                 { data: 'created_at' },
                 { data: null },
