@@ -71,6 +71,7 @@ class JobreleaseController extends Controller
             'holiday'=>'required|max:255',
             'time'=>'required|max:255',
             'welfare'=>'required|max:255',
+            'salary'=>'required|max:255',
             'tel'=>'required|max:255',
         ]);
 
@@ -81,6 +82,7 @@ class JobreleaseController extends Controller
             $jobrelease->holiday = $request->holiday;
             $jobrelease->time = $request->time;
             $jobrelease->welfare = $request->welfare;
+            $jobrelease->salary = $request->salary;
             $jobrelease->tel = $request->tel;
             $jobrelease->img = $request->img;
             $jobrelease->info = $request->info;
@@ -112,7 +114,7 @@ class JobreleaseController extends Controller
         if($row){
             $query->skip($row);
         }
-        $jobList = $query->get();
+        $jobList = $query->orderBy('id','desc')->get();
         
 
         return response([
@@ -166,6 +168,7 @@ class JobreleaseController extends Controller
             'holiday'=>'required|max:255',
             'time'=>'required|max:255',
             'welfare'=>'required|max:255',
+            'salary'=>'required|max:255',
             'tel'=>'required|max:255',
         ]);
 
@@ -175,6 +178,7 @@ class JobreleaseController extends Controller
             $jobrelease->holiday = $request->holiday;
             $jobrelease->time = $request->time;
             $jobrelease->welfare = $request->welfare;
+            $jobrelease->salary = $request->salary;
             $jobrelease->tel = $request->tel;
             $jobrelease->info = $request->info;
             $jobrelease->save();

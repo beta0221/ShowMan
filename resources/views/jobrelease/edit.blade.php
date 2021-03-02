@@ -79,6 +79,15 @@
         
         </div>
     </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-6 offset-md-3 control-label" for="sdf">薪資待遇</label>  
+      <div class="col-md-6 offset-md-3">
+      <input id="sdf" name="salary" type="text" placeholder="薪資待遇" class="form-control input-md" required="true" value="{{$job->salary}}">
+      
+      </div>
+  </div>
     
     <!-- Text input-->
     <div class="form-group">

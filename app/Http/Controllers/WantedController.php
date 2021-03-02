@@ -24,7 +24,7 @@ class WantedController extends Controller
         if($row){
             $query->skip($row);
         }
-        $result = $query->get();
+        $result = $query->orderBy('id','desc')->get();
         
         return response()->json([
             'draw'=>intval($draw),

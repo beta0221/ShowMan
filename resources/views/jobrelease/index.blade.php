@@ -17,6 +17,7 @@
             <th>休假制度</th>
             <th>工作時段</th>
             <th>福利制度</th>
+            <th>薪資待遇</th>
             <th>連路電話</th>
             <th>新增日期</th>
             <th>-</th>
@@ -70,6 +71,7 @@
                 { data: 'holiday' },
                 { data: 'time' },
                 { data: 'welfare' },
+                { data: 'salary' },
                 { data: 'tel' },
                 { data: 'created_at' },
                 { data: null },
@@ -83,7 +85,7 @@
             });
 
 
-            table.column(8, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            table.column(9, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
                 let data = table.row(i).data();
                 cell.innerHTML = `
                 <div class="btn btn-sm btn-danger" onclick="deleteJob(${data.id});">刪除</div>
