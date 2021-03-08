@@ -30,6 +30,9 @@ Route::prefix('admin')->group(function () {
     Route::put('/news/{slug}/update','NewsController@update');
 });
 
+
+Route::get('/news','NewsController@index');
+Route::get('/news/{slug}','NewsController@show');
 Route::resource('/wanted','WantedController');
 Route::resource('/resume','ResumeController');
 Route::resource('/contact','ContactController');

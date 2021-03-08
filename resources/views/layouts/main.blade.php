@@ -52,6 +52,9 @@
                   <a class="nav-link {{Request::is('/')?'nav-now':'lll'}}" href="/"><span class="oi" data-glyph="home"></span>  公司簡介 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link {{Request::is('news')?'nav-now':''}}" href="/news"><span class="oi" data-glyph="volume-high"></span>  最新消息</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link {{Request::is('resume/create')?'nav-now':''}}" href="/resume/create"><span class="oi" data-glyph="person"></span>  求職專區</a>
                 </li>
                 <li class="nav-item">

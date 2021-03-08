@@ -33,31 +33,10 @@ class NewsController extends Controller
             if($news->top){
                 $news->is_top = '＊';
             }
-            if(strlen($news->body) >10){
-                $news->body = substr($news->body,0,10) . '...';
+            if(strlen($news->body) >20){
+                $news->body = substr($news->body,0,20) . '...';
             }
         }
-
-        return response([
-            'draw'=>intval($draw),
-            'iTotalRecords'=>$count,
-            'iTotalDisplayRecords'=>$count,
-            'aaData'=>$newsList,
-        ]);
-    }
-
-    public function api_getNews(Request $request){
-        $draw = $request->draw;
-        $row = $request->start;
-        $rowperpage = $request->length;
-
-        $count = News::count();
-        $query = new News();
-        $query = $query->take($rowperpage);
-        if($row){
-            $query->skip($row);
-        }
-        $newsList = $query->orderBy('top','desc')->orderBy('id','desc')->get();
 
         return response([
             'draw'=>intval($draw),
@@ -74,7 +53,17 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        $newsList = News::orderBy('top','desc')->orderBy('id','desc')->paginate(10);
+
+        foreach ($newsList as $news) {
+            $time = strtotime($news->created_at);
+            $news->date = date('Y-m-d',$time);
+        }
+        
+
+        return view('news/index',[
+            'newsList'=>$newsList
+        ]);
     }
 
     /**
@@ -124,9 +113,12 @@ class NewsController extends Controller
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show($slug)
     {
-        //
+        $news = News::where('slug',$slug)->firstOrFail();
+        return view('news.show',[
+            'news'=>$news
+        ]);
     }
 
     /**

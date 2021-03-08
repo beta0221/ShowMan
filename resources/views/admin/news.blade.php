@@ -62,6 +62,7 @@ $(document).ready(function() {
             cell.innerHTML = `
             <div class="btn btn-sm btn-danger" onclick="deleteNews('${data.slug}');">刪除</div>
             <a class="btn btn-sm btn-warning" href='/admin/news/${data.slug}/edit'">編輯</a>
+            <a class="btn btn-sm btn-info" href='/news/${data.slug}'" target="_blank">預覽</a>
             `;
         });
     });
