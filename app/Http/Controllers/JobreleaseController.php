@@ -115,6 +115,10 @@ class JobreleaseController extends Controller
             $query->skip($row);
         }
         $jobList = $query->orderBy('id','desc')->get();
+
+        foreach ($jobList as $job) {
+            $job->date = substr($job->created_at,0,10);
+        }
         
 
         return response([
