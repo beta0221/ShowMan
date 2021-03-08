@@ -21,7 +21,9 @@ Route::get('getContact','ContactController@getContact');
 Route::get('getJobRelease','JobreleaseController@getJobRelease');
 Route::get('getWanted','WantedController@getWanted');
 Route::get('getResume','ResumeController@getResume');
-
+Route::get('getNews','NewsController@api_getNews');
+Route::get('admin/getNews','NewsController@api_admin_getNews');
+Route::post('admin/news/{slug}/delete','NewsController@destroy');
 
 Route::get('getJobList','JobreleaseController@getJobList');
 

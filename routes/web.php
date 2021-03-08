@@ -22,6 +22,14 @@ Route::get('/admin', function(){
     return view('admin.index');
 })->middleware('auth');
 
+Route::prefix('admin')->group(function () {
+    Route::get('/news','NewsController@admin_index');
+    Route::get('/news/create','NewsController@create');
+    Route::post('/news/store','NewsController@store');
+    Route::get('/news/{slug}/edit','NewsController@edit');
+    Route::put('/news/{slug}/update','NewsController@update');
+});
+
 Route::resource('/wanted','WantedController');
 Route::resource('/resume','ResumeController');
 Route::resource('/contact','ContactController');
