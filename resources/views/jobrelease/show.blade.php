@@ -35,39 +35,39 @@
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">職缺名稱：<span>{{$job->name}}</span></label>
+                    <label class="col-md-12 control-label" for="textinput">職缺名稱：<span>{{$job->name}}</span></label>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">地點：<span>{{$job->location}}</span></label>
+                    <label class="col-md-12 control-label" for="textinput">地點：<span>{{$job->location}}</span></label>
                 </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">休假制度：<span>{{$job->holiday}}</span></label>
+                    <label class="col-md-12 control-label" for="textinput">休假制度：<span>{{$job->holiday}}</span></label>
                     
                 </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">工作時段：<span>{{$job->time}}</span></label>
+                    <label class="col-md-12 control-label" for="textinput">工作時段：<span>{{$job->time}}</span></label>
                     
                 </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="sdf">福利制度：<span>{{$job->welfare}}</span></label>
+                    <label class="col-md-12 control-label" for="sdf">福利制度：<span>{{$job->welfare}}</span></label>
                     
                 </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="sdf">薪資待遇：<span>{{$job->salary}}</span></label>
+                    <label class="col-md-12 control-label" for="sdf">薪資待遇：<span>{{$job->salary}}</span></label>
                 </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="dsf">聯絡電話：<span>{{$job->tel}}</span></label>
+                    <label class="col-md-12 control-label" for="dsf">聯絡電話：<span>{{$job->tel}}</span></label>
                     
                 </div>
 
