@@ -32,12 +32,12 @@ div.background img{
     justify-content: center;
 }
 .navbar ul li{
-    margin:0 40px;
+    margin:0 32px;
     transition: all 0.1s ease-in-out;
 }
 .navbar ul li a {
   color: #fff!important;
-  font-size: 18px;
+  font-size: 16px;
 }
 .navbar ul li:hover{
   transform: scale(1.2);
