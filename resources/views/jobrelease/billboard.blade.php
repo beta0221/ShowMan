@@ -20,14 +20,14 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>地點</th>
-                        <th>職缺名稱</th>
+                        <th>職缺與地點</th>
+                        {{-- <th>職缺名稱</th> --}}
                         <th>休假制度</th>
                         <th>工作時段</th>
                         {{-- <th>福利制度</th> --}}
                         <th>薪資待遇</th>
-                        <th>聯絡電話</th>
-                        <th>新增日期</th>
+                        {{-- <th>聯絡電話</th> --}}
+                        {{-- <th>新增日期</th> --}}
                         <th>-</th>
 
                     </tr>
@@ -57,21 +57,28 @@
             'ajax':'/api/getJobList',
             columns: [
                 { data: null },
-                { data: 'location' },
-                { data: 'name' },
+                { data: null },
+                // { data: 'name' },
                 { data: 'holiday' },
                 { data: 'time' },
                 // { data: 'welfare' },
                 { data: 'salary' },
-                { data: 'tel' },
-                { data: 'date' },
+                // { data: 'tel' },
+                // { data: 'date' },
                 { data: null },
             ],
             "columnDefs": [
                 {
+                    "targets": 1,
+                    "data": null,
+                    "render": function ( data, type, row ) {
+                        return data.name +'-'+ data.location;
+                    }
+                },
+                {
                     "targets": -1,
                     "data": null,
-                    "defaultContent": `<button class="btn btn-sm btn-info">詳細</button>`
+                    "defaultContent": `<button class="btn btn-bg btn-info">詳細</button>`
                 },
             ]
         });

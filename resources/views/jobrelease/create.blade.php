@@ -3,8 +3,7 @@
 @section('title','新增最新職缺')
 
 @section('css')
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
-  <script>tinymce.init({selector:'textarea'});</script>
+  
 @endsection
 
 @section('content')
@@ -118,5 +117,6 @@
 @endsection
 
 @section('js')
-
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+<script src="/js/tinymce_init.js"></script>
 @endsection
