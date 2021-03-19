@@ -72,7 +72,7 @@
                     "targets": 1,
                     "data": null,
                     "render": function ( data, type, row ) {
-                        return data.name +'-'+ data.location;
+                        return data.name +'<br>'+ data.location;
                     }
                 },
                 {

@@ -39,6 +39,12 @@
 @section('js')
 <script>
     $(document).ready( function () {
+        $.ajaxSetup({
+  			headers: {
+    			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  			}
+		});
+
         var table = $('#data-table').DataTable({
             'searching':false,
             "processing": true,
@@ -65,11 +71,31 @@
 
             table.column(7, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
                 let data = table.row(i).data();
-                cell.innerHTML = `<div class="btn btn-sm btn-info"><a class="text-white" href="/resume/${data.id}" target="_blank">詳細</a></div>`;
+                cell.innerHTML = `
+                <div class="btn btn-sm btn-danger" onclick="deleteResume(${data.id});">刪除</div>
+                <div class="btn btn-sm btn-info"><a class="text-white" href="/resume/${data.id}" target="_blank">詳細</a></div>`;
             } );
 
         } );
             
     });
+
+    function deleteResume(id){
+        if(!confirm('確定刪除？')){ return; }
+        $.ajax({
+            type: "POST",
+            url: "/resume/"+id,
+            data: {
+                '_method':'DELETE'
+            },
+            //dataType: "json",
+            success: function (res) {
+                window.location.reload();
+            },
+            error:function(error){
+                alert('系統錯誤');
+            }
+        });
+    }
 </script>
 @endsection

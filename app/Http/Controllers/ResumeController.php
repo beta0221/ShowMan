@@ -135,6 +135,7 @@ class ResumeController extends Controller
      */
     public function destroy(resume $resume)
     {
-        //
+        $resume->delete();
+        return response('success');
     }
 }
