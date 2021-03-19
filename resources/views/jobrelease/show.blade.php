@@ -26,12 +26,12 @@
         </div>
 
 
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-md-8 offset-md-2" style="color:darkgray">
                 建立時間：{{$job->created_at}}<br>
                 更新時間：{{$job->updated_at}}
             </div>
-        </div>
+        </div> --}}
 
         <div class="row">
             <div class="col-md-8 offset-md-2 text-center job-content">
