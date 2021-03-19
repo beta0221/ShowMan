@@ -16,7 +16,7 @@ hr{
     font-size: 56px;
 }
 .job-content{
-    letter-spacing: 12px;
+    letter-spacing: 4px;
 }
 
 @media(max-width:450px){
