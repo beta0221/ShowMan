@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2" style="color:darkgray">
                 建立時間：{{$job->created_at}}<br>
-                更新時間：{{$job->update_at}}
+                更新時間：{{$job->updated_at}}
             </div>
         </div>
 

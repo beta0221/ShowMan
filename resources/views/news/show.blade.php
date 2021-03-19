@@ -28,7 +28,7 @@ body{
     <div class="row mb-2">
         <div class="col-md-12" style="color:darkgray">
             建立時間：{{$news->created_at}}<br>
-            更新時間：{{$news->update_at}}
+            更新時間：{{$news->updated_at}}
         </div>
     </div>
 
