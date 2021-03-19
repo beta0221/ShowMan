@@ -25,6 +25,13 @@ body{
         </div>
     </div>
 
+    <div class="row mb-2">
+        <div class="col-md-12" style="color:darkgray">
+            建立時間：{{$news->created_at}}<br>
+            更新時間：{{$news->update_at}}
+        </div>
+    </div>
+
     <hr class="m-0">
 
     <div class="row">
