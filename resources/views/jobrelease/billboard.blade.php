@@ -20,7 +20,7 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>職缺與地點</th>
+                        <th style="text-align: center">職缺與地點</th>
                         {{-- <th>職缺名稱</th> --}}
                         <th>休假制度</th>
                         <th>工作時段</th>
@@ -71,8 +71,10 @@
                 {
                     "targets": 1,
                     "data": null,
+                    // "defaultContent":"",
                     "render": function ( data, type, row ) {
-                        return data.name +'<br>'+ data.location;
+                        return "<div style='text-align:center'>"+data.name+"<br>"+data.location+"</div>";
+                        // return data.name +'<br>'+ data.location;
                     }
                 },
                 {

@@ -130,6 +130,7 @@ class WantedController extends Controller
      */
     public function destroy(wanted $wanted)
     {
-        //
+        $wanted->delete();
+        return response('success');
     }
 }
