@@ -34,7 +34,7 @@ class NewsController extends Controller
                 $news->is_top = '＊';
             }
             if(strlen($news->body) >20){
-                $news->body = substr($news->body,0,20) . '...';
+                $news->body = mb_substr($news->body,0,20,"utf-8") . '...';
             }
         }
 

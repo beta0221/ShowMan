@@ -99,7 +99,13 @@ class JobreleaseController extends Controller
 
     public function billboard()
     {
-        return view('jobrelease.billboard');
+
+        $jobList = Jobrelease::orderBy('id','desc')->paginate(10);
+
+
+        return view('jobrelease.billboard',[
+            'jobList'=>$jobList
+        ]);
     }
 
     public function getJobList(Request $request){

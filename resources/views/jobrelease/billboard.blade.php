@@ -7,7 +7,9 @@
 {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/datatables.min.css"/> --}}
 
 <style>
-
+#data-table .table-index-th{
+    max-width:32px;
+}
 </style>
 
 @endsection
@@ -16,23 +18,31 @@
 <div class="container pt-4 pb-4" style="min-height:600px;">
     <div class="row">
         <div class="col-md-12">
-            <table id="data-table" class="display" style="width:100%">
+            
+
+            <table class="table table-light w-100">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th style="text-align: center">職缺與地點</th>
-                        {{-- <th>職缺名稱</th> --}}
-                        <th>休假制度</th>
-                        <th>工作時段</th>
-                        {{-- <th>福利制度</th> --}}
-                        <th>薪資待遇</th>
-                        {{-- <th>聯絡電話</th> --}}
-                        {{-- <th>新增日期</th> --}}
-                        <th>-</th>
-
+                        <th scope="col">#</th>
+                        <th class="text-center" scope="col">職缺與地點</th>
+                        <th class="text-center" scope="col">薪資待遇</th>
                     </tr>
                 </thead>
+                <tbody>
+                    @foreach ($jobList as $i => $job)
+                    <tr>
+                        <th style="width: 10%;min-width:24px" scope="row">{{$i + 1}}</th>
+                        <td style="width: 60%;min-width:48px;color:gray" class="text-center">
+                            <a href="/jobrelease/{{$job->id}}">{{$job->location}}<br>{{$job->name}}</a>
+                        </td>
+                        <td class="text-center">
+                            <span>{{$job->salary}}</span>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
+
 
         </div>
     </div>
@@ -45,61 +55,6 @@
 @endsection
 
 @section('js')
-<script src="/js/datatables.min.js"></script>
-{{-- <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/datatables.min.js"></script> --}}
-<script>
-    $(document).ready(function() {
-
-        var table = $('#data-table').DataTable({
-            'searching':false,
-            "processing": true,
-            "serverSide": true,
-            'ajax':'/api/getJobList',
-            columns: [
-                { data: null },
-                { data: null },
-                // { data: 'name' },
-                { data: 'holiday' },
-                { data: 'time' },
-                // { data: 'welfare' },
-                { data: 'salary' },
-                // { data: 'tel' },
-                // { data: 'date' },
-                { data: null },
-            ],
-            "columnDefs": [
-                {
-                    "targets": 1,
-                    "data": null,
-                    // "defaultContent":"",
-                    "render": function ( data, type, row ) {
-                        return "<div style='text-align:center'>"+data.name+"<br>"+data.location+"</div>";
-                        // return data.name +'<br>'+ data.location;
-                    }
-                },
-                {
-                    "targets": -1,
-                    "data": null,
-                    "defaultContent": `<button class="btn btn-bg btn-info">詳細</button>`
-                },
-            ]
-        });
 
 
-        $('#data-table tbody').on( 'click', 'button', function () {
-            var data = table.row( $(this).parents('tr') ).data();
-            location.href=`/jobrelease/${data.id}`;
-        } );
-
-        table.on( 'draw.dt order.dt search.dt', function () {
-            table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-                cell.innerHTML = i+1;
-            } );
-        } );
-
-
-    });
-
-
-</script>
 @endsection
