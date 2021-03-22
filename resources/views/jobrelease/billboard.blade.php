@@ -16,7 +16,15 @@
 
 @section('content')
 <div class="container pt-4 pb-4" style="min-height:600px;">
-    <div class="row">
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2 class="text-dark">最新職缺</h2>
+        </div>
+    </div>
+
+
+    <div class="row mt-2 mb-2">
         <div class="col-md-12">
             
 
@@ -46,6 +54,14 @@
 
         </div>
     </div>
+
+    <div class="row mt-2 mb-4">
+        <div class="col-md-12">
+            {{$jobList->links()}}
+        </div>
+    </div>
+
+
 </div>
 
 
